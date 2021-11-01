@@ -4,7 +4,9 @@ import java.awt.*;
 
 public class Form extends JFrame{
     MyPanel mp=null;
-	ImageIcon hero = new ImageIcon("jpgs/hero1.png");       //图片路径自由修改
+	ImageIcon hero = new ImageIcon("jpgs/hero.png");
+	ImageIcon ground = new ImageIcon("jpgs/ground.png");
+	ImageIcon wall = new ImageIcon("jpgs/wall.png");
 	Image image = hero.getImage();
 	public static void main(String[] args) {
 		Form pb=new Form();

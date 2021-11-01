@@ -8,7 +8,7 @@ import java.awt.event.*;
 public class playBall extends JFrame{
  
 	MyPanel mp=null;
-	ImageIcon hero = new ImageIcon("jpgs/hero1.png");	//图片位置自行修改
+	ImageIcon hero = new ImageIcon("jpgs/hero.png");	//图片位置自行修改
 	Image image = hero.getImage();
 	public static void main(String[] args) {
 		playBall pb=new playBall();
