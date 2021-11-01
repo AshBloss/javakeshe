@@ -6,13 +6,13 @@ public class control{
 }
 class MyPanel extends JPanel implements KeyListener
 {
-	int x=320;
-	int y=320;
+	int x=448;
+	int y=448;
 	public void paint(Graphics g)
 	{
 		super.paint(g);
 		Form ba = new Form();
-		g.drawImage(ba.image, x, y, this);
+		g.drawImage(ba.hero, x, y, this);
 	}
  
 	@Override

@@ -1,20 +1,25 @@
-import java.io.*;
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 public class floor {
-    int n;
+    int n=15;
     int floor_num;
-    int floor_map[][] = new int[n][n];
-    public floor(int num,int [][] map){
-        n=15;
-        floor_num=num;
+    int floor_map[][];
+    public void load(MyPanel mp){
+        Form f = new Form();
+        JLabel map[][]=new JLabel[n][n];
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
-                floor_map[i][j]=map[i][j];
+                if(floor_map[i][j]==1){
+                    map[i][j] = new JLabel(f.wallIcon);
+                    map[i][j].setBounds(32*j, 32*i, f.wallIcon.getIconWidth(), f.wallIcon.getIconHeight());
+                    mp.add(map[i][j]);
+                }
+                else if(floor_map[i][j]==0){
+                    map[i][j] = new JLabel(f.groundIcon);
+                    map[i][j].setBounds(32*j, 32*i, f.groundIcon.getIconWidth(), f.groundIcon.getIconHeight());
+                    mp.add(map[i][j]);
+                }
             }
         }
-    }
-    void load(){
+
     }
 }
