@@ -1,18 +1,22 @@
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import java.awt.*;
 
-public class Form{
-    public static void main(String[] args) {
-        JFrame game = new JFrame("mota");
-        ImageIcon hero = new ImageIcon("jpgs/hero1.png");
-        JLabel label = new JLabel(hero);
-        label.setSize(hero.getIconWidth(), hero.getIconHeight());
-        game.setBounds(300, 300, 500, 500);
-        game.setLayout(new FlowLayout());
-        game.add(label);
-        game.setVisible(true);
-        game.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
+public class Form extends JFrame{
+    MyPanel mp=null;
+	ImageIcon hero = new ImageIcon("jpgs/hero1.png");       //图片路径自由修改
+	Image image = hero.getImage();
+	public static void main(String[] args) {
+		Form pb=new Form();
+		pb.run();
+	}
+	public void run()
+	{
+		mp=new MyPanel();
+		this.add(mp);
+		this.addKeyListener(mp);
+		this.setSize(400,400);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setVisible(true);
+	}
 }

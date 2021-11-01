@@ -1,3 +1,4 @@
+/*
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
@@ -67,3 +68,4 @@ class MyPanel extends JPanel implements KeyListener
 	public void keyReleased(KeyEvent e) {	
 	}
 }
+*/
