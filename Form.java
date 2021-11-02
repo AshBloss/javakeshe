@@ -5,15 +5,17 @@ import javax.swing.JLabel;
 import java.awt.*;
 public class Form extends JFrame{
     MyPanel mp=null;
+	//加载图片资源
 	ImageIcon heroIcon = new ImageIcon("jpgs/hero.png");
 	ImageIcon groundIcon = new ImageIcon("jpgs/ground.png");
 	ImageIcon wallIcon = new ImageIcon("jpgs/wall.png");
 	Image hero = heroIcon.getImage();
-	//int floornow = 1;
+
 	public static void main(String[] args) {
 		Form pb=new Form();
 		pb.run();
 	}
+	//窗体与组件加载运行
 	public void run()
 	{
 		mp=new MyPanel();
