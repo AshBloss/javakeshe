@@ -26,7 +26,7 @@ public class MyPanel extends JPanel implements KeyListener
 		switch (e.getKeyCode()){
 			case KeyEvent.VK_UP:		//上
 				yp--;
-				if(fl.floor_map[yp][xp]==0){
+				if(fl.floor_map[yp][xp]!=1){
 					y-=L;
 					this.repaint();
 				}
@@ -36,7 +36,7 @@ public class MyPanel extends JPanel implements KeyListener
 				break;
 			case KeyEvent.VK_DOWN:		//下
 				yp++;
-				if(fl.floor_map[yp][xp]==0){
+				if(fl.floor_map[yp][xp]!=1){
 					y+=L;
 					this.repaint();
 				}
@@ -46,7 +46,7 @@ public class MyPanel extends JPanel implements KeyListener
 				break;
 			case KeyEvent.VK_LEFT:		//左
 				xp--;
-				if(fl.floor_map[yp][xp]==0){
+				if(fl.floor_map[yp][xp]!=1){
 					x-=L;
 					this.repaint();
 				}
@@ -56,7 +56,7 @@ public class MyPanel extends JPanel implements KeyListener
 				break;
 			case KeyEvent.VK_RIGHT:		//右
 				xp++;
-				if(fl.floor_map[yp][xp]==0){
+				if(fl.floor_map[yp][xp]!=1){
 					x+=L;
 					this.repaint();
 				}
@@ -81,16 +81,26 @@ public class MyPanel extends JPanel implements KeyListener
         JLabel map[][]=new JLabel[n][n];
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
-                if(fl.floor_map[i][j]==1){
-                    map[i][j] = new JLabel(f.wallIcon);
-                    map[i][j].setBounds(L*j, L*i, f.wallIcon.getIconWidth(), f.wallIcon.getIconHeight());
-					this.add(map[i][j]);
-                }
-                else if(fl.floor_map[i][j]==0){
-                    map[i][j] = new JLabel(f.groundIcon);
-                    map[i][j].setBounds(L*j, L*i, f.groundIcon.getIconWidth(), f.groundIcon.getIconHeight());
-                    this.add(map[i][j]);
-                }
+				map[i][j] = new JLabel();
+				map[i][j].setBounds(L*j, L*i, L, L);
+                switch(fl.floor_map[i][j]){
+					case 0:
+						map[i][j].setIcon(f.groundIcon);
+                    	this.add(map[i][j]);
+						break;
+					case 1:
+						map[i][j].setIcon(f.wallIcon);
+						this.add(map[i][j]);
+						break;
+					case 2:
+						map[i][j].setIcon(f.upIcon);
+						this.add(map[i][j]);
+						break;
+					case 3:
+						map[i][j].setIcon(f.downIcon);
+						this.add(map[i][j]);
+						break;
+				} 
             }
         }   
     }

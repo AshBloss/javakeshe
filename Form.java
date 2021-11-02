@@ -9,6 +9,8 @@ public class Form extends JFrame{
 	ImageIcon heroIcon = new ImageIcon("jpgs/hero.png");
 	ImageIcon groundIcon = new ImageIcon("jpgs/ground.png");
 	ImageIcon wallIcon = new ImageIcon("jpgs/wall.png");
+	ImageIcon upIcon = new ImageIcon("jpgs/up.png");
+	ImageIcon downIcon = new ImageIcon("jpgs/down.png");
 	Image hero = heroIcon.getImage();
 
 	public static void main(String[] args) {
