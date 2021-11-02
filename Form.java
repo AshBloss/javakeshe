@@ -1,8 +1,10 @@
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 import java.awt.*;
+import java.awt.event.*;
 public class Form extends JFrame{
     MyPanel mp=null;
 	//加载图片资源
@@ -13,10 +15,8 @@ public class Form extends JFrame{
 	ImageIcon downIcon = new ImageIcon("jpgs/down.png");
 	Image hero = heroIcon.getImage();
 
-	public static void main(String[] args) {
-		Form pb=new Form();
-		pb.run();
-	}
+	//Form st;
+	Form ga;
 	//窗体与组件加载运行
 	public void run()
 	{

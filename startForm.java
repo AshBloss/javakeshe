@@ -1,21 +1,19 @@
 
+
 import javax.swing.*;
 import java.awt.event.*;
 
-class act implements ActionListener {
-    public void actionPerformed(ActionEvent e){
-        Form f1Form=new Form();
-    }
-}
 
+public class startForm extends JFrame implements ActionListener{
+    ImageIcon bgImg=new ImageIcon("jpgs/background.jpg");
+    ImageIcon icon1=new ImageIcon("jpgs/startgame.jpg");
+    ImageIcon icon2=new ImageIcon("jpgs/Load.jpg");
+    ImageIcon icon3=new ImageIcon("jpgs/exit.jpg");
 
-
-public class startForm extends JFrame{
     public static void main(String[] args) {
-        startForm f=new startForm();
-        f.start();
+        new startForm();
     }
-    public void start(){
+    public startForm(){
         this.setBounds(400,300,480,480);
         this.setResizable(false);
 
@@ -29,10 +27,7 @@ public class startForm extends JFrame{
         button1.setBounds(180,220,110,50);
         button2.setBounds(180,280,110,50);
         button3.setBounds(180,340,110,50);
-        ImageIcon bgImg=new ImageIcon("jpgs/background.jpg");
-        ImageIcon icon1=new ImageIcon("jpgs/startgame.jpg");
-        ImageIcon icon2=new ImageIcon("jpgs/Load.jpg");
-        ImageIcon icon3=new ImageIcon("jpgs/exit.jpg");
+        button1.addActionListener(this);
         this.add(button1);
         this.add(button2);
         this.add(button3);
@@ -46,7 +41,10 @@ public class startForm extends JFrame{
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-
+    @Override
+    public void actionPerformed(ActionEvent e){
+        this.dispose();
+        Form ga = new Form();
+        ga.run();
+    }
 }
-    
-
