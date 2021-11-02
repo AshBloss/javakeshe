@@ -4,7 +4,9 @@ import java.awt.event.*;
 public class MyPanel extends JPanel implements KeyListener
 {
 	int x=448;
-	int y=448;
+	int y=416;
+	int xp = x/32;
+	int yp = y/32;
 	public void paint(Graphics g)
 	{
 		super.paint(g);
@@ -14,23 +16,47 @@ public class MyPanel extends JPanel implements KeyListener
  
 	@Override
 	public void keyPressed(KeyEvent e) {
-		switch (e.getKeyCode())
-		{
+		floor fl = new floor();
+		switch (e.getKeyCode()){
 			case KeyEvent.VK_UP:
-				y-=32;
-				this.repaint();
+				yp--;
+				if(fl.floor_map[yp][xp]==0){
+					y-=32;
+					this.repaint();
+				}
+				else{
+					yp++;
+				}
 				break;
 			case KeyEvent.VK_DOWN:
-				y+=32;
-				this.repaint();
+				yp++;
+				if(fl.floor_map[yp][xp]==0){
+					y+=32;
+					this.repaint();
+				}
+				else{
+					yp--;
+				}
 				break;
 			case KeyEvent.VK_LEFT:
-				x-=32;
-				this.repaint();
+				xp--;
+				if(fl.floor_map[yp][xp]==0){
+					x-=32;
+					this.repaint();
+				}
+				else{
+					xp++;
+				}
 				break;
 			case KeyEvent.VK_RIGHT:
-				x+=32;
-				this.repaint();
+				xp++;
+				if(fl.floor_map[yp][xp]==0){
+					x+=32;
+					this.repaint();
+				}
+				else{
+					xp--;
+				}
 				break;
 		}
 		
