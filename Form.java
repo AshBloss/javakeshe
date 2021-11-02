@@ -9,7 +9,7 @@ public class Form extends JFrame{
 	ImageIcon groundIcon = new ImageIcon("jpgs/ground.png");
 	ImageIcon wallIcon = new ImageIcon("jpgs/wall.png");
 	Image hero = heroIcon.getImage();
-	int floornow = 1;
+	//int floornow = 1;
 	public static void main(String[] args) {
 		Form pb=new Form();
 		pb.run();
@@ -20,8 +20,9 @@ public class Form extends JFrame{
 		mp.setLayout(null);
 		this.setLayout(null);
 		mp.setBounds(0, 0, 480, 480);
-		floor fl=new floor1();
-		fl.load(mp);
+		floor fl=new floor();
+		//fl.load(mp);
+		mp.load(fl);
 		this.add(mp);
 		this.addKeyListener(mp);
 		this.setSize(493,518);
