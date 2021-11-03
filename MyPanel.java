@@ -76,6 +76,14 @@ public class MyPanel extends JPanel implements KeyListener
 	}
 	//加载地图
 	public void load(floor fl){
+		Form f=new Form();
+		for(int i=0;i<15;i++){
+			for(int j=0;j<15;j++){
+				fl.fl_map[i][j] = new Mapcube(i, j, fl.floor_map[i][j]);
+				this.add(fl.fl_map[i][j]);
+			}
+		}
+		/*
         Form f = new Form();
 		int n=15;
         JLabel map[][]=new JLabel[n][n];
@@ -102,6 +110,7 @@ public class MyPanel extends JPanel implements KeyListener
 						break;
 				} 
             }
-        }   
+        }
+		*/   
     }
 }
