@@ -19,7 +19,7 @@ public class Mapcube extends JLabel{
                 this.setIcon(f.wallIcon);
                 break;
             default:
-                this.setIcon(f.wallIcon);
+                this.setIcon(f.groundIcon);
         }
     }
 

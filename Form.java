@@ -14,9 +14,6 @@ public class Form extends JFrame{
 	ImageIcon upIcon = new ImageIcon("jpgs/up.png");
 	ImageIcon downIcon = new ImageIcon("jpgs/down.png");
 	Image hero = heroIcon.getImage();
-
-	//Form st;
-	Form ga;
 	//窗体与组件加载运行
 	public void run()
 	{
