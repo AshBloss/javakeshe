@@ -1,5 +1,6 @@
 public class Hero {
     //属性
+    String name;
     int atk=10;
     int def=10;
     int HP=1000;
@@ -8,6 +9,10 @@ public class Hero {
     //物品
     int yellowkey_num;
     int redkey_num;
+    //构造
+    public Hero(String na){
+        name = new String(na);
+    }
     //物品属性加减运算
     public void add_atk(int i){
         this.atk += i;

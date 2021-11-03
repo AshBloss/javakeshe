@@ -12,6 +12,8 @@ public class MyPanel extends JPanel implements KeyListener
 	//主角初始地图坐标
 	int xp = x/L;
 	int yp = y/L;
+	Hero me = new Hero("me");
+	floor fl = new floor();
 	//绘制主角
 	public void paint(Graphics g)
 	{
@@ -75,42 +77,24 @@ public class MyPanel extends JPanel implements KeyListener
 	public void keyReleased(KeyEvent e) {	
 	}
 	//加载地图
-	public void load(floor fl){
-		Form f=new Form();
+	public void loadmap(){
 		for(int i=0;i<15;i++){
 			for(int j=0;j<15;j++){
 				fl.fl_map[i][j] = new Mapcube(i, j, fl.floor_map[i][j]);
 				this.add(fl.fl_map[i][j]);
 			}
 		}
-		/*
-        Form f = new Form();
-		int n=15;
-        JLabel map[][]=new JLabel[n][n];
-        for(int i=0;i<n;i++){
-            for(int j=0;j<n;j++){
-				map[i][j] = new JLabel();
-				map[i][j].setBounds(L*j, L*i, L, L);
-                switch(fl.floor_map[i][j]){
-					case 0:
-						map[i][j].setIcon(f.groundIcon);
-                    	this.add(map[i][j]);
-						break;
-					case 1:
-						map[i][j].setIcon(f.wallIcon);
-						this.add(map[i][j]);
-						break;
-					case 2:
-						map[i][j].setIcon(f.upIcon);
-						this.add(map[i][j]);
-						break;
-					case 3:
-						map[i][j].setIcon(f.downIcon);
-						this.add(map[i][j]);
-						break;
-				} 
-            }
-        }
-		*/   
     }
+
+	public void loaditem(){
+		for(int i=0;i<15;i++){
+			for(int j=0;j<15;j++){
+				switch(fl.floor_map[i][j]){
+					case 10:
+						fl.fl_item[i][j] = new yellow_door(i, j, fl.floor_map[i][j]);
+
+				}
+			}
+		}
+	}
 }

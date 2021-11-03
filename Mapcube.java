@@ -1,5 +1,4 @@
 import javax.swing.JLabel;
-import javax.swing.Icon;
 
 public class Mapcube extends JLabel{
     int mx;

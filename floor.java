@@ -1,4 +1,4 @@
-import javax.swing.*;
+
 //地图第一层
 public class floor {
     int n=15;                                   //地图尺寸
@@ -21,8 +21,8 @@ public class floor {
         {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
     };
 
-    Mapcube fl_map[][] = new Mapcube[n][n];
+    Mapcube fl_map[][] = new Mapcube[n][n];     //底层地图
 
-    Item fl_item[][] = new Item[n][n];
+    Item fl_item[][] = new Item[n][n];          //物品图
 
 }
