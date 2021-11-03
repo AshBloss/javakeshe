@@ -23,4 +23,6 @@ public class floor {
 
     Mapcube fl_map[][] = new Mapcube[n][n];
 
+    Item fl_item[][] = new Item[n][n];
+
 }
