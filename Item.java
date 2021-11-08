@@ -7,6 +7,11 @@ public class Item extends JLabel{
     boolean existence = true;
     public Item(){
         super();
+    }
+    public Item(int x, int y){
+        this.ix=x;
+        this.iy=y;
+        this.existence=false;
         this.setBounds(Form.L*iy,Form.L*ix,Form.L,Form.L);
     }
     public Item(int x,int y,int ic){
@@ -72,7 +77,7 @@ class yellow_door extends Item{
     @Override
     public void action_in(Hero h){
         if(h.yellowkey_num>0){
-            h.cost_yk(h);
+            h.cost_yk();
             this.existence=false;
         }
     }
@@ -88,7 +93,7 @@ class red_door extends Item{
     @Override
     public void action_in(Hero h){
         if(h.redkey_num>0){
-            h.cost_rk(h);
+            h.cost_rk();
             this.existence=false;
         }
     }
@@ -103,7 +108,7 @@ class yellow_key extends Item{
     }
     @Override
     public void action_in(Hero h){
-        h.add_yk(h);
+        h.add_yk();
         this.existence=false;
     }
 }
@@ -117,7 +122,7 @@ class red_key extends Item{
     }
     @Override
     public void action_in(Hero h){
-        h.add_rk(h);
+        h.add_rk();
         this.existence=false;
     }
 }

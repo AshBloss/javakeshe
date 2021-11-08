@@ -18,7 +18,6 @@ public class Mapcube extends JLabel{
                 break;
             default:
                 this.setIcon(Form.groundIcon);
-            
         }
     }
 
