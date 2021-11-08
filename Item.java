@@ -5,9 +5,9 @@ public class Item extends JLabel{
     int iy;
     int item_class;
     boolean existence = true;
-    Form f=new Form();
     public Item(){
         super();
+        this.setBounds(MyPanel.L*iy,MyPanel.L*ix,MyPanel.L,MyPanel.L);
     }
     public Item(int x,int y,int ic){
         super();
@@ -17,26 +17,26 @@ public class Item extends JLabel{
         this.setBounds(MyPanel.L*iy,MyPanel.L*ix,MyPanel.L,MyPanel.L);
         switch(ic){
             case 10:
-                this.setIcon(f.upIcon);
+                this.setIcon(Form.upIcon);
                 break;
             case 11:
-                this.setIcon(f.downIcon);
+                this.setIcon(Form.downIcon);
                 break;
             case 12:
-                this.setIcon(f.yellowdoorIcon);
+                this.setIcon(Form.yellowdoorIcon);
                 break;
             case 13:
-                this.setIcon(f.reddoorIcon);
+                this.setIcon(Form.reddoorIcon);
                 break;
             case 14:
-                this.setIcon(f.yellowkeyIcon);
+                this.setIcon(Form.yellowkeyIcon);
                 break;
             case 15:
-                this.setIcon(f.redkeyIcon);
+                this.setIcon(Form.redkeyIcon);
                 break;
         }
     }
-    public void action(){}
+    public void action_in(Hero h){}
 }
 
 class up extends Item{

@@ -7,40 +7,40 @@ public class Hero {
     //死亡
     boolean death=false;
     //物品
-    int yellowkey_num;
-    int redkey_num;
+    int yellowkey_num=0;
+    int redkey_num=0;
     //构造
     public Hero(String na){
         name = new String(na);
     }
     //物品属性加减运算
-    public void add_atk(int i){
-        this.atk += i;
+    public void add_atk(int i,Hero h){
+        h.atk += i;
     }
-    public void add_def(int i){
-        this.def += i;
+    public void add_def(int i,Hero h){
+        h.def += i;
     }
-    public void add_HP(int i){
-        this.HP += i;
+    public void add_HP(int i,Hero h){
+        h.HP += i;
     }
-    public void add_yk(){
-        this.yellowkey_num++;
+    public void add_yk(Hero h){
+        h.yellowkey_num++;
     }
-    public void add_rk(){
-        this.redkey_num++;
+    public void add_rk(Hero h){
+        h.redkey_num++;
     }
-    public void cost_yk(){
-        if(this.yellowkey_num>=1)
-            this.yellowkey_num--;
+    public void cost_yk(Hero h){
+        if(h.yellowkey_num>=1)
+            h.yellowkey_num--;
     }
-    public void cost_rk(){
-        if(this.redkey_num>=1)
-            this.redkey_num--;
+    public void cost_rk(Hero h){
+        if(h.redkey_num>=1)
+            h.redkey_num--;
     }
     //判死
-    public void dead(){
-        if(this.HP<=0){
-            this.death=true;
+    public void dead(Hero h){
+        if(h.HP<=0){
+            h.death=true;
         }
     }
 }

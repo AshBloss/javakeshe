@@ -17,9 +17,9 @@ public class startForm extends JFrame implements ActionListener{
         this.setBounds(400,300,480,480);
         this.setResizable(false);
 
-        JButton button1=new JButton("开始游戏");
-        JButton button2=new JButton("读取存档");
-        JButton button3=new JButton("退出");
+        JButton button1=new JButton();
+        JButton button2=new JButton();
+        JButton button3=new JButton();
         
 
         this.setLayout(null);
