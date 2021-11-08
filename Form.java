@@ -54,11 +54,12 @@ public class Form extends JFrame implements KeyListener{
 		super.paint(g);
 		g.drawImage(Form.hero, x, y, this);
 	}
-
+	//返回主菜单
 	public void endgame(){
 		this.dispose();
 		new startForm();
 	}
+	//控制逻辑与地图行走逻辑，以及事件触发逻辑
 	@Override
 	public void keyPressed(KeyEvent e) {
 		switch (e.getKeyCode()){
@@ -69,7 +70,7 @@ public class Form extends JFrame implements KeyListener{
 					if(mp.fl.fl_item[yp][xp].existence){
 						mp.fl.fl_item[yp][xp].action_in(h);
 						System.out.println(h.redkey_num);
-						mp.fl.fl_item[yp][xp].upda();
+						mp.fl.fl_item[yp][xp].update();
 						if((mp.fl.fl_item[yp][xp].item_class==12||mp.fl.fl_item[yp][xp].item_class==13)&&mp.fl.fl_item[yp][xp].existence){
 							go=false;
 						}
@@ -77,6 +78,7 @@ public class Form extends JFrame implements KeyListener{
 					if(h.death){
 						System.out.println("You died");
 						JOptionPane.showMessageDialog(null, "You died!Please try again.", "Die", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
+						this.endgame();
 					}
 				}
 				else{
@@ -98,7 +100,7 @@ public class Form extends JFrame implements KeyListener{
 					if(mp.fl.fl_item[yp][xp].existence){
 						mp.fl.fl_item[yp][xp].action_in(h);
 						System.out.println(h.redkey_num);
-						mp.fl.fl_item[yp][xp].upda();
+						mp.fl.fl_item[yp][xp].update();
 						if((mp.fl.fl_item[yp][xp].item_class==12||mp.fl.fl_item[yp][xp].item_class==13)&&mp.fl.fl_item[yp][xp].existence){
 							go=false;
 						}
@@ -106,6 +108,7 @@ public class Form extends JFrame implements KeyListener{
 					if(h.death){
 						System.out.println("You died");
 						JOptionPane.showMessageDialog(null, "You died!Please try again.", "Die", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
+						this.endgame();
 					}
 				}
 				else{
@@ -127,7 +130,7 @@ public class Form extends JFrame implements KeyListener{
 					if(mp.fl.fl_item[yp][xp].existence){
 						mp.fl.fl_item[yp][xp].action_in(h);
 						System.out.println(h.redkey_num);
-						mp.fl.fl_item[yp][xp].upda();
+						mp.fl.fl_item[yp][xp].update();
 						if((mp.fl.fl_item[yp][xp].item_class==12||mp.fl.fl_item[yp][xp].item_class==13)&&mp.fl.fl_item[yp][xp].existence){
 							go=false;
 						}
@@ -135,6 +138,7 @@ public class Form extends JFrame implements KeyListener{
 					if(h.death){
 						System.out.println("You died");
 						JOptionPane.showMessageDialog(null, "You died!Please try again.", "Die", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
+						this.endgame();
 						
 					}
 				}
@@ -157,7 +161,7 @@ public class Form extends JFrame implements KeyListener{
 					if(mp.fl.fl_item[yp][xp].existence){
 						mp.fl.fl_item[yp][xp].action_in(h);
 						System.out.println(h.redkey_num);
-						mp.fl.fl_item[yp][xp].upda();
+						mp.fl.fl_item[yp][xp].update();
 						if((mp.fl.fl_item[yp][xp].item_class==12||mp.fl.fl_item[yp][xp].item_class==13)&&mp.fl.fl_item[yp][xp].existence){
 							go=false;
 						}
@@ -165,6 +169,7 @@ public class Form extends JFrame implements KeyListener{
 					if(h.death){
 						System.out.println("You died");
 						JOptionPane.showMessageDialog(null, "You died!Please try again.", "Die", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
+						this.endgame();
 						
 					}
 				}
@@ -179,6 +184,9 @@ public class Form extends JFrame implements KeyListener{
 					xp--;
 				}
 				break;
+			}
+			case KeyEvent.VK_ESCAPE:{
+				this.endgame();
 			}
 		}
 		

@@ -24,9 +24,4 @@ public class floor {
     Mapcube fl_map[][] = new Mapcube[n][n];     //底层地图
 
     Item fl_item[][] = new Item[n][n];          //物品图
-    public void update(int yp, int xp){
-        if(!this.fl_item[yp][xp].existence){
-            this.fl_item[yp][xp] = new Item();
-        }
-    }
 }

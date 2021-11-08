@@ -36,7 +36,7 @@ public class Item extends JLabel{
                 break;
         }
     }
-    public void upda(){
+    public void update(){
         if(!this.existence){
             this.setIcon(null);
         }
