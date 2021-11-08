@@ -25,6 +25,7 @@ public class Form extends JFrame{
 		//floor fl=new floor();
 		//fl.load(mp);
 		mp.loadmap();
+		mp.loaditem();
 		this.add(mp);
 		this.addKeyListener(mp);
 		this.setSize(493,518);

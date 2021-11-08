@@ -16,10 +16,10 @@ public class Mapcube extends JLabel{
             case 1:
                 this.setIcon(Form.wallIcon);
                 break;
-            /*
+            
             default:
                 this.setIcon(Form.groundIcon);
-            */
+            
         }
     }
 
