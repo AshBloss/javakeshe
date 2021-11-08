@@ -5,7 +5,7 @@ public class floor {
     int floor_num=1;                            //地图层数
     int floor_map[][]=new int[][]{              //地图代码
         {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-        {1,11,0,0,0,0,1,0,0,0,0,0,0,0,1},
+        {1,11,0,0,15,0,1,0,0,0,0,0,0,0,1},
         {1,1,1,0,1,0,0,0,1,0,1,1,1,0,1},
         {1,0,0,0,1,0,1,1,1,0,1,0,0,0,1},
         {1,1,1,0,1,1,1,0,1,0,0,0,1,0,1},
@@ -24,10 +24,9 @@ public class floor {
     Mapcube fl_map[][] = new Mapcube[n][n];     //底层地图
 
     Item fl_item[][] = new Item[n][n];          //物品图
-    public void update(Item item){
-        if(!item.existence){
-            item = null;
-            item = new Item();
+    public void update(int yp, int xp){
+        if(!this.fl_item[yp][xp].existence){
+            this.fl_item[yp][xp] = new Item();
         }
     }
 }

@@ -7,14 +7,14 @@ public class Item extends JLabel{
     boolean existence = true;
     public Item(){
         super();
-        this.setBounds(MyPanel.L*iy,MyPanel.L*ix,MyPanel.L,MyPanel.L);
+        this.setBounds(Form.L*iy,Form.L*ix,Form.L,Form.L);
     }
     public Item(int x,int y,int ic){
         super();
         this.ix=x;
         this.iy=y;
         this.item_class=ic;
-        this.setBounds(MyPanel.L*iy,MyPanel.L*ix,MyPanel.L,MyPanel.L);
+        this.setBounds(Form.L*iy,Form.L*ix,Form.L,Form.L);
         switch(ic){
             case 10:
                 this.setIcon(Form.upIcon);
@@ -34,6 +34,11 @@ public class Item extends JLabel{
             case 15:
                 this.setIcon(Form.redkeyIcon);
                 break;
+        }
+    }
+    public void upda(){
+        if(!this.existence){
+            this.setIcon(null);
         }
     }
     public void action_in(Hero h){}
@@ -64,6 +69,13 @@ class yellow_door extends Item{
     public yellow_door(int x,int y,int ic){
         super(x,y,ic);
     }
+    @Override
+    public void action_in(Hero h){
+        if(h.yellowkey_num>0){
+            h.cost_yk(h);
+            this.existence=false;
+        }
+    }
 }
 
 class red_door extends Item{
@@ -72,6 +84,13 @@ class red_door extends Item{
     }
     public red_door(int x,int y,int ic){
         super(x,y,ic);
+    }
+    @Override
+    public void action_in(Hero h){
+        if(h.redkey_num>0){
+            h.cost_rk(h);
+            this.existence=false;
+        }
     }
 }
 
@@ -82,6 +101,11 @@ class yellow_key extends Item{
     public yellow_key(int x,int y,int ic){
         super(x,y,ic);
     }
+    @Override
+    public void action_in(Hero h){
+        h.add_yk(h);
+        this.existence=false;
+    }
 }
 
 class red_key extends Item{
@@ -90,5 +114,10 @@ class red_key extends Item{
     }
     public red_key(int x,int y,int ic){
         super(x,y,ic);
+    }
+    @Override
+    public void action_in(Hero h){
+        h.add_rk(h);
+        this.existence=false;
     }
 }

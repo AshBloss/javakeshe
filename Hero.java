@@ -30,12 +30,10 @@ public class Hero {
         h.redkey_num++;
     }
     public void cost_yk(Hero h){
-        if(h.yellowkey_num>=1)
-            h.yellowkey_num--;
+        h.yellowkey_num--;
     }
     public void cost_rk(Hero h){
-        if(h.redkey_num>=1)
-            h.redkey_num--;
+        h.redkey_num--;
     }
     //判死
     public void dead(Hero h){

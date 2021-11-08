@@ -8,7 +8,7 @@ public class Mapcube extends JLabel{
         mx=mx1;
         my=my1;
         cube_class = cl;
-        this.setBounds(MyPanel.L*my, MyPanel.L*mx, MyPanel.L, MyPanel.L);
+        this.setBounds(Form.L*my, Form.L*mx, Form.L, Form.L);
         switch(cube_class){
             case 0:
                 this.setIcon(Form.groundIcon);
@@ -16,7 +16,6 @@ public class Mapcube extends JLabel{
             case 1:
                 this.setIcon(Form.wallIcon);
                 break;
-            
             default:
                 this.setIcon(Form.groundIcon);
             
