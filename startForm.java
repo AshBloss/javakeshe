@@ -1,4 +1,4 @@
-import java.awt.*;
+
 import javax.swing.*;
 import java.awt.event.*;
 public class startForm extends JFrame implements ActionListener{
@@ -15,7 +15,8 @@ public class startForm extends JFrame implements ActionListener{
         new startForm();
     }
     public startForm(){
-        this.setBounds(400,300,480,480);
+        this.setSize(480,480);
+        this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setLayout(null);
 

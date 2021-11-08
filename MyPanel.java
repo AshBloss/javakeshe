@@ -1,6 +1,5 @@
-import java.awt.*;
+
 import javax.swing.*;
-import java.awt.event.*;
 
 //地图
 public class MyPanel extends JLayeredPane{	

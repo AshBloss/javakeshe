@@ -40,6 +40,7 @@ public class Form extends JFrame implements KeyListener{
 		this.addKeyListener(this);
 		this.add(mp);
 		this.setSize(493,518);
+		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
 	}
@@ -68,6 +69,10 @@ public class Form extends JFrame implements KeyListener{
 						fl.fl_item[yp][xp].update();
 						if((fl.fl_item[yp][xp].item_class==12||fl.fl_item[yp][xp].item_class==13)&&fl.fl_item[yp][xp].existence){
 							go=false;
+						}
+						if(fl.fl_item[yp][xp].item_class==10){
+							JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
+							this.endgame();
 						}
 					}
 					if(fl.fl_enemy[yp][xp].existence){
@@ -101,6 +106,10 @@ public class Form extends JFrame implements KeyListener{
 						fl.fl_item[yp][xp].update();
 						if((fl.fl_item[yp][xp].item_class==12||fl.fl_item[yp][xp].item_class==13)&&fl.fl_item[yp][xp].existence){
 							go=false;
+						}
+						if(fl.fl_item[yp][xp].item_class==10){
+							JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
+							this.endgame();
 						}
 					}
 					if(fl.fl_enemy[yp][xp].existence){
@@ -136,6 +145,10 @@ public class Form extends JFrame implements KeyListener{
 						if((fl.fl_item[yp][xp].item_class==12||fl.fl_item[yp][xp].item_class==13)&&fl.fl_item[yp][xp].existence){
 							go=false;
 						}
+						if(fl.fl_item[yp][xp].item_class==10){
+							JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
+							this.endgame();
+						}
 					}
 					if(fl.fl_enemy[yp][xp].existence){
 						h.battle(fl.fl_enemy[yp][xp]);
@@ -169,6 +182,10 @@ public class Form extends JFrame implements KeyListener{
 						fl.fl_item[yp][xp].update();
 						if((fl.fl_item[yp][xp].item_class==12||fl.fl_item[yp][xp].item_class==13)&&fl.fl_item[yp][xp].existence){
 							go=false;
+						}
+						if(fl.fl_item[yp][xp].item_class==10){
+							JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
+							this.endgame();
 						}
 					}
 					if(fl.fl_enemy[yp][xp].existence){
