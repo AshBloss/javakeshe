@@ -1,9 +1,13 @@
 {
     "cSpell.words": [
+        "changefloor",
+        "changemap",
+        "floornow",
         "greenslm",
         "javakeshe",
         "jpgs",
         "loadenemy",
+        "loadfloor",
         "loaditem",
         "loadmap",
         "Mapcube",
@@ -12,6 +16,7 @@
         "redslm",
         "setatk",
         "setdef",
+        "showmap",
         "smallbf",
         "startgame",
         "yellowdoor",

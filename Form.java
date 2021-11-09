@@ -4,6 +4,7 @@ import javax.swing.JOptionPane;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 public class Form extends JFrame implements KeyListener{
 	//加载图片资源
 	public static ImageIcon heroIcon = new ImageIcon("jpgs/hero.png");
@@ -19,7 +20,9 @@ public class Form extends JFrame implements KeyListener{
 	public static ImageIcon redslmIcon = new ImageIcon("jpgs/redslm.png");
 	public static ImageIcon smallbfIcon = new ImageIcon("jpgs/smallbf.png");
 	public static Image hero = heroIcon.getImage();
-	public static int L = 32;
+	public static int L = 32;			//地图块大小
+	public static int Dx=7;				//窗口x差值
+	public static int Dy=29;			//窗口y差值
 	MyPanel mp=new MyPanel();
 	//主角初始位置
 	int x = L+7;
@@ -29,20 +32,29 @@ public class Form extends JFrame implements KeyListener{
 	int yp = (y-29)/L;
 
 	Hero h=new Hero("me");
-	floor fl=new floor();
+	ArrayList<floor> fl = new ArrayList<floor>();
+	int fn = 0;				//当前楼层
 
 	//窗体与组件加载运行
 	public void run(){
+		this.loadfloor();
 		mp.setLayout(null);
 		this.setLayout(null);
 		mp.setBounds(0, 0, 480, 480);
-		mp.loadmap(fl);
+		mp.showmap(fl.get(0));
 		this.addKeyListener(this);
 		this.add(mp);
 		this.setSize(493,518);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
+	}
+	//初始化楼层
+	public void loadfloor(){
+		fl.add(new floor1());
+		fl.get(0).loadmap();
+		fl.add(new floor2());
+		fl.get(0).loadmap();
 	}
 
 	//绘制主角
@@ -63,22 +75,47 @@ public class Form extends JFrame implements KeyListener{
 			case KeyEvent.VK_UP:{			//上
 				yp--;
 				Boolean go=true;
-				if(fl.floor_map[yp][xp]!=1){
-					if(fl.fl_item[yp][xp].existence){
-						fl.fl_item[yp][xp].action_in(h);
-						fl.fl_item[yp][xp].update();
-						if((fl.fl_item[yp][xp].item_class==12||fl.fl_item[yp][xp].item_class==13)&&fl.fl_item[yp][xp].existence){
+				Boolean changefloor = false;
+				if(fl.get(fn).floor_map[yp][xp]!=1){
+					if(fl.get(fn).fl_item[yp][xp].existence){
+						fl.get(fn).fl_item[yp][xp].action_in(h);
+						fl.get(fn).fl_item[yp][xp].update();
+						if((fl.get(fn).fl_item[yp][xp].item_class==12||fl.get(fn).fl_item[yp][xp].item_class==13)&&fl.get(fn).fl_item[yp][xp].existence){
 							go=false;
 						}
-						if(fl.fl_item[yp][xp].item_class==10){
-							JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
-							this.endgame();
+						//上楼
+						if(fl.get(fn).fl_item[yp][xp].item_class==10){
+							if(fl.get(fn+1).floor_num==-1||this.fl.get(fn)==null){
+								JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
+								this.endgame();
+							}
+							else {
+								changefloor=true;
+								this.fn++;
+								mp.changemap(fl.get(fn));
+								yp = fl.get(fn).yst;
+								xp = fl.get(fn).xst;
+								x = xp*L+Dx;
+								y = xp*L+Dy;
+								this.repaint();
+							}
+						}
+						//下楼
+						else if(fl.get(fn).fl_item[yp][xp].item_class==11){
+							changefloor=true;
+							this.fn--;
+							mp.changemap(fl.get(fn));
+							yp = fl.get(fn).ynx;
+							xp = fl.get(fn).xnx;
+							x = xp*L+Dx;
+							y = xp*L+Dy;
+							this.repaint();
 						}
 					}
-					if(fl.fl_enemy[yp][xp].existence){
-						h.battle(fl.fl_enemy[yp][xp]);
+					if(fl.get(fn).fl_enemy[yp][xp].existence){
+						h.battle(fl.get(fn).fl_enemy[yp][xp]);
 						System.out.println(h.HP);
-						fl.fl_enemy[yp][xp].update();
+						fl.get(fn).fl_enemy[yp][xp].update();
 					}
 					if(h.death){
 						JOptionPane.showMessageDialog(null, "You died!Please try again.", "Die", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
@@ -88,7 +125,8 @@ public class Form extends JFrame implements KeyListener{
 				else{
 					go=false;
 				}
-				if(go){
+				if(changefloor){}
+				else if(go){
 					y-=L;
 					this.repaint();
 				}
@@ -97,25 +135,49 @@ public class Form extends JFrame implements KeyListener{
 				}
 				break;
 			}
+
 			case KeyEvent.VK_DOWN:{			//下
 				yp++;
 				Boolean go=true;
-				if(fl.floor_map[yp][xp]!=1){
-					if(fl.fl_item[yp][xp].existence){
-						fl.fl_item[yp][xp].action_in(h);;
-						fl.fl_item[yp][xp].update();
-						if((fl.fl_item[yp][xp].item_class==12||fl.fl_item[yp][xp].item_class==13)&&fl.fl_item[yp][xp].existence){
+				Boolean changefloor = false;
+				if(fl.get(fn).floor_map[yp][xp]!=1){
+					if(fl.get(fn).fl_item[yp][xp].existence){
+						fl.get(fn).fl_item[yp][xp].action_in(h);;
+						fl.get(fn).fl_item[yp][xp].update();
+						if((fl.get(fn).fl_item[yp][xp].item_class==12||fl.get(fn).fl_item[yp][xp].item_class==13)&&fl.get(fn).fl_item[yp][xp].existence){
 							go=false;
 						}
-						if(fl.fl_item[yp][xp].item_class==10){
-							JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
-							this.endgame();
+						if(fl.get(fn).fl_item[yp][xp].item_class==10){
+							if(this.fl.get(fn+1).floor_num==-1||this.fl.get(fn)==null){
+								JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
+								this.endgame();
+							}
+							else {
+								changefloor=true;
+								this.fn++;
+								mp.changemap(fl.get(fn));
+								yp = fl.get(fn).yst;
+								xp = fl.get(fn).xst;
+								x = xp*L+Dx;
+								y = xp*L+Dy;
+								this.repaint();
+							}
+						}
+						else if(fl.get(fn).fl_item[yp][xp].item_class==11){
+							changefloor=true;
+							this.fn--;
+							mp.changemap(fl.get(fn));
+							yp = fl.get(fn).ynx;
+							xp = fl.get(fn).xnx;
+							x = xp*L+Dx;
+							y = xp*L+Dy;
+							this.repaint();
 						}
 					}
-					if(fl.fl_enemy[yp][xp].existence){
-						h.battle(fl.fl_enemy[yp][xp]);
+					if(fl.get(fn).fl_enemy[yp][xp].existence){
+						h.battle(fl.get(fn).fl_enemy[yp][xp]);
 						System.out.println(h.HP);
-						fl.fl_enemy[yp][xp].update();
+						fl.get(fn).fl_enemy[yp][xp].update();
 					}
 					if(h.death){
 						System.out.println("You died");
@@ -126,7 +188,8 @@ public class Form extends JFrame implements KeyListener{
 				else{
 					go=false;
 				}
-				if(go){
+				if(changefloor){}
+				else if(go){
 					y+=L;
 					this.repaint();
 				}
@@ -138,22 +201,45 @@ public class Form extends JFrame implements KeyListener{
 			case KeyEvent.VK_LEFT:{			//左
 				xp--;
 				Boolean go=true;
-				if(fl.floor_map[yp][xp]!=1){
-					if(fl.fl_item[yp][xp].existence){
-						fl.fl_item[yp][xp].action_in(h);
-						fl.fl_item[yp][xp].update();
-						if((fl.fl_item[yp][xp].item_class==12||fl.fl_item[yp][xp].item_class==13)&&fl.fl_item[yp][xp].existence){
+				Boolean changefloor = false;
+				if(fl.get(fn).floor_map[yp][xp]!=1){
+					if(fl.get(fn).fl_item[yp][xp].existence){
+						fl.get(fn).fl_item[yp][xp].action_in(h);
+						fl.get(fn).fl_item[yp][xp].update();
+						if((fl.get(fn).fl_item[yp][xp].item_class==12||fl.get(fn).fl_item[yp][xp].item_class==13)&&fl.get(fn).fl_item[yp][xp].existence){
 							go=false;
 						}
-						if(fl.fl_item[yp][xp].item_class==10){
-							JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
-							this.endgame();
+						if(fl.get(fn).fl_item[yp][xp].item_class==10){
+							if(this.fl.get(fn+1).floor_num==-1||this.fl.get(fn)==null){
+								JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
+								this.endgame();
+							}
+							else {
+								changefloor=true;
+								this.fn++;
+								mp.changemap(fl.get(fn));
+								yp = fl.get(fn).yst;
+								xp = fl.get(fn).xst;
+								x = xp*L+Dx;
+								y = xp*L+Dy;
+								this.repaint();
+							}
+						}
+						else if(fl.get(fn).fl_item[yp][xp].item_class==11){
+							changefloor=true;
+							this.fn--;
+							mp.changemap(fl.get(fn));
+							yp = fl.get(fn).ynx;
+							xp = fl.get(fn).xnx;
+							x = xp*L+Dx;
+							y = xp*L+Dy;
+							this.repaint();
 						}
 					}
-					if(fl.fl_enemy[yp][xp].existence){
-						h.battle(fl.fl_enemy[yp][xp]);
+					else if(fl.get(fn).fl_enemy[yp][xp].existence){
+						h.battle(fl.get(fn).fl_enemy[yp][xp]);
 						System.out.println(h.HP);
-						fl.fl_enemy[yp][xp].update();
+						fl.get(fn).fl_enemy[yp][xp].update();
 					}
 					if(h.death){
 						System.out.println("You died");
@@ -164,7 +250,8 @@ public class Form extends JFrame implements KeyListener{
 				else{
 					go=false;
 				}
-				if(go){
+				if(changefloor){}
+				else if(go){
 					x-=L;
 					this.repaint();
 				}
@@ -176,22 +263,45 @@ public class Form extends JFrame implements KeyListener{
 			case KeyEvent.VK_RIGHT:{		//右
 				xp++;
 				Boolean go=true;
-				if(fl.floor_map[yp][xp]!=1){
-					if(fl.fl_item[yp][xp].existence){
-						fl.fl_item[yp][xp].action_in(h);
-						fl.fl_item[yp][xp].update();
-						if((fl.fl_item[yp][xp].item_class==12||fl.fl_item[yp][xp].item_class==13)&&fl.fl_item[yp][xp].existence){
+				Boolean changefloor = false;
+				if(fl.get(fn).floor_map[yp][xp]!=1){
+					if(fl.get(fn).fl_item[yp][xp].existence){
+						fl.get(fn).fl_item[yp][xp].action_in(h);
+						fl.get(fn).fl_item[yp][xp].update();
+						if((fl.get(fn).fl_item[yp][xp].item_class==12||fl.get(fn).fl_item[yp][xp].item_class==13)&&fl.get(fn).fl_item[yp][xp].existence){
 							go=false;
 						}
-						if(fl.fl_item[yp][xp].item_class==10){
-							JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
-							this.endgame();
+						if(fl.get(fn).fl_item[yp][xp].item_class==10){
+							if(this.fl.get(fn+1).floor_num==-1||this.fl.get(fn)==null){
+								JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
+								this.endgame();
+							}
+							else {
+								changefloor=true;
+								this.fn++;
+								mp.changemap(fl.get(fn));
+								yp = fl.get(fn).yst;
+								xp = fl.get(fn).xst;
+								x = xp*L+Dx;
+								y = xp*L+Dy;
+								this.repaint();
+							}
+						}
+						else if(fl.get(fn).fl_item[yp][xp].item_class==11){
+							changefloor=true;
+							this.fn--;
+							mp.changemap(fl.get(fn));
+							yp = fl.get(fn).ynx;
+							xp = fl.get(fn).xnx;
+							x = xp*L+Dx;
+							y = xp*L+Dy;
+							this.repaint();
 						}
 					}
-					if(fl.fl_enemy[yp][xp].existence){
-						h.battle(fl.fl_enemy[yp][xp]);
+					if(fl.get(fn).fl_enemy[yp][xp].existence){
+						h.battle(fl.get(fn).fl_enemy[yp][xp]);
 						System.out.println(h.HP);
-						fl.fl_enemy[yp][xp].update();
+						fl.get(fn).fl_enemy[yp][xp].update();
 					}
 					if(h.death){
 						System.out.println("You died");
@@ -203,7 +313,8 @@ public class Form extends JFrame implements KeyListener{
 				else{
 					go=false;
 				}
-				if(go){
+				if(changefloor){}
+				else if(go){
 					x+=L;
 					this.repaint();
 				}
