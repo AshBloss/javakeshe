@@ -52,6 +52,10 @@ public class Enemy extends JLabel {
 class greenslm extends Enemy{
     public greenslm(){
         super();
+        super.setatk(15);
+        super.setdef(5);
+        super.setHP(50);
+        super.setIcon(Form.greenslmIcon);
     }
     public greenslm(int x, int y, int cl){
         super(x,y,cl);
@@ -65,6 +69,10 @@ class greenslm extends Enemy{
 class redslm extends Enemy{
     public redslm(){
         super();
+        super.setatk(20);
+        super.setdef(6);
+        super.setHP(100);
+        super.setIcon(Form.redslmIcon);
     }
     public redslm(int x,int y, int cl){
         super(x, y, cl);
@@ -78,6 +86,10 @@ class redslm extends Enemy{
 class smallbf extends Enemy{
     public smallbf(){
         super();
+        super.setatk(50);
+        super.setdef(20);
+        super.setHP(1000);
+        super.setIcon(Form.smallbfIcon);
     }
     public smallbf(int x, int y,int cl){
         super(x, y, cl);

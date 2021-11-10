@@ -20,7 +20,9 @@ public class Form extends JFrame implements KeyListener{
 	public static ImageIcon redslmIcon = new ImageIcon("jpgs/redslm.png");
 	public static ImageIcon smallbfIcon = new ImageIcon("jpgs/smallbf.png");
 	public static ImageIcon specialdoorIcon = new ImageIcon("jpgs/specialdoor.png");
+	public static ImageIcon enemybookIcon = new ImageIcon("jpgs/enemybook.png");
 	public static Image hero = heroIcon.getImage();
+
 	public static int L = 32;			//地图块大小
 	public static int Dx=7;				//窗口x差值
 	public static int Dy=29;			//窗口y差值
@@ -326,6 +328,9 @@ public class Form extends JFrame implements KeyListener{
 			}
 			case KeyEvent.VK_ESCAPE:{
 				this.endgame();
+			}
+			case KeyEvent.VK_X:{
+				new enemybook();
 			}
 		}
 	}
