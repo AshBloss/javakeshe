@@ -39,7 +39,7 @@ public class floor {
 					case 10:
 						this.fl_item[i][j] = new up(i, j, this.floor_map[i][j]);
                         this.xnx=j;
-                        this.xnx=i;
+                        this.ynx=i;
 						break;
 					case 11:
 						this.fl_item[i][j] = new down(i, j, this.floor_map[i][j]);

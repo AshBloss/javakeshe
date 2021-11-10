@@ -54,7 +54,7 @@ public class Form extends JFrame implements KeyListener{
 		fl.add(new floor1());
 		fl.get(0).loadmap();
 		fl.add(new floor2());
-		fl.get(0).loadmap();
+		fl.get(1).loadmap();
 	}
 
 	//绘制主角
@@ -85,7 +85,7 @@ public class Form extends JFrame implements KeyListener{
 						}
 						//上楼
 						if(fl.get(fn).fl_item[yp][xp].item_class==10){
-							if(fl.get(fn+1).floor_num==-1||this.fl.get(fn)==null){
+							if((fn+1)>fl.size()){
 								JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
 								this.endgame();
 							}
@@ -148,7 +148,7 @@ public class Form extends JFrame implements KeyListener{
 							go=false;
 						}
 						if(fl.get(fn).fl_item[yp][xp].item_class==10){
-							if(this.fl.get(fn+1).floor_num==-1||this.fl.get(fn)==null){
+							if((fn+1)>fl.size()){
 								JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
 								this.endgame();
 							}
@@ -210,7 +210,7 @@ public class Form extends JFrame implements KeyListener{
 							go=false;
 						}
 						if(fl.get(fn).fl_item[yp][xp].item_class==10){
-							if(this.fl.get(fn+1).floor_num==-1||this.fl.get(fn)==null){
+							if((fn+1)>fl.size()){
 								JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
 								this.endgame();
 							}
@@ -272,7 +272,7 @@ public class Form extends JFrame implements KeyListener{
 							go=false;
 						}
 						if(fl.get(fn).fl_item[yp][xp].item_class==10){
-							if(this.fl.get(fn+1).floor_num==-1||this.fl.get(fn)==null){
+							if((fn+1)>=fl.size()){
 								JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
 								this.endgame();
 							}
