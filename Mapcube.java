@@ -4,6 +4,7 @@ public class Mapcube extends JLabel{
     int mx;
     int my;
     int cube_class;
+    Boolean is_wall;
     public Mapcube(int mx1, int my1, int cl){
         mx=mx1;
         my=my1;
@@ -12,12 +13,16 @@ public class Mapcube extends JLabel{
         switch(cube_class){
             case 0:
                 this.setIcon(Form.groundIcon);
+                this.is_wall=false;
                 break;
             case 1:
                 this.setIcon(Form.wallIcon);
+                this.is_wall=true;
                 break;
             default:
                 this.setIcon(Form.groundIcon);
+                this.is_wall=false;
+                break;
         }
     }
 

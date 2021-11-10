@@ -76,7 +76,7 @@ public class Form extends JFrame implements KeyListener{
 				yp--;
 				Boolean go=true;
 				Boolean changefloor = false;
-				if(fl.get(fn).floor_map[yp][xp]!=1){
+				if(!fl.get(fn).fl_map[yp][xp].is_wall){
 					if(fl.get(fn).fl_item[yp][xp].existence){
 						fl.get(fn).fl_item[yp][xp].action_in(h);
 						fl.get(fn).fl_item[yp][xp].update();
@@ -140,7 +140,7 @@ public class Form extends JFrame implements KeyListener{
 				yp++;
 				Boolean go=true;
 				Boolean changefloor = false;
-				if(fl.get(fn).floor_map[yp][xp]!=1){
+				if(!fl.get(fn).fl_map[yp][xp].is_wall){
 					if(fl.get(fn).fl_item[yp][xp].existence){
 						fl.get(fn).fl_item[yp][xp].action_in(h);;
 						fl.get(fn).fl_item[yp][xp].update();
@@ -202,7 +202,7 @@ public class Form extends JFrame implements KeyListener{
 				xp--;
 				Boolean go=true;
 				Boolean changefloor = false;
-				if(fl.get(fn).floor_map[yp][xp]!=1){
+				if(!fl.get(fn).fl_map[yp][xp].is_wall){
 					if(fl.get(fn).fl_item[yp][xp].existence){
 						fl.get(fn).fl_item[yp][xp].action_in(h);
 						fl.get(fn).fl_item[yp][xp].update();
@@ -264,7 +264,7 @@ public class Form extends JFrame implements KeyListener{
 				xp++;
 				Boolean go=true;
 				Boolean changefloor = false;
-				if(fl.get(fn).floor_map[yp][xp]!=1){
+				if(!fl.get(fn).fl_map[yp][xp].is_wall){
 					if(fl.get(fn).fl_item[yp][xp].existence){
 						fl.get(fn).fl_item[yp][xp].action_in(h);
 						fl.get(fn).fl_item[yp][xp].update();
