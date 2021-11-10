@@ -163,8 +163,7 @@ class special_door extends Item {
         }
     }
 }
-<<<<<<< HEAD
-=======
+
 
 class red_stone extends Item{
     public red_stone(){
@@ -221,4 +220,3 @@ class blue_bottle extends Item{
         this.existence=false;
     }
 }
->>>>>>> a6f860cefe7d7ec817bd20381204bb87bf8911e3

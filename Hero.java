@@ -52,6 +52,7 @@ public class Hero {
         }
         else{
             this.cost_HP(sp);
+            em.defeat();
             this.dead();
         }
 
