@@ -2,26 +2,10 @@
 //地图第一层
 public class floor {
     int n=15;                                   //地图尺寸
-    int floor_num=-1;                            //地图层数
+    int floor_num=-1;                           //地图层数
     int xst,yst;
     int xnx,ynx;
-    int floor_map[][]/*=new int[n][n]{              //地图代码
-        {1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1},
-        {1, 11,  0,  0,  0,  0,  1,  0,  0,  0,  0,  0,  0,  0,  1},
-        {1,  1,  1,  0,  1,  0,  0,  0,  1,  0,  1,  1,  1,  0,  1},
-        {1,  0,  0,  0,  1,  0,  1,  1,  1,  0,  1,  0,  0,  0,  1},
-        {1,  1,  1,  0,  1,  1,  1,  0,  1,  0,  0,  0,  1,  0,  1},
-        {1,  0,  0,  0,  1,  0,  0,  0,  1,  1,  1,  0,  1,  1,  1},
-        {1,  1,  1,  0,  1,  0,  0,  0,  0,  1,  0,  0,  0,  0,  1},
-        {1,  0,  1,  0,  1,  1,  1,  0,  0,  1,  0,  1,  1,  1,  1},
-        {1,  0,  1,  0,  0,  0,  0,  0,  0,  1,  1,  1,  0, 15,  1},
-        {1,  0,  1,  1,  1,  0,  1,  1,  0,  1,  0,  0,  0,  1,  1},
-        {1,  0,  0,  0,  0,  0,  0,  1,  0, 13,  0,  1,  1,  1,  1},
-        {1,  1,  1,  0,  1,  1,  0,  1,  1,  1,  1,  1,  0,  0,  1},
-        {1,  0,  1,  0,  0,  1,  0,  0,100,101,  0,  0,  0,  1,  1},
-        {1,  0,  0,  0,  0,  1,  1,  1,  1,102,  1,  1,  0, 10,  1},
-        {1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1}
-    }*/;
+    int floor_map[][];              			//地图代码
 
     Mapcube fl_map[][] = new Mapcube[n][n];     //底层地图
 
@@ -60,6 +44,18 @@ public class floor {
 						break;
 					case 16:
 					    this.fl_item[i][j] = new special_door(i, j, this.floor_map[i][j]);
+						break;
+					case 17:
+						this.fl_item[i][j] = new red_stone(i, j, this.floor_map[i][j]);
+						break;
+					case 18:
+						this.fl_item[i][j] = new blue_stone(i, j, this.floor_map[i][j]);
+						break;
+					case 19:
+						this.fl_item[i][j] = new red_bottle(i, j, this.floor_map[i][j]);
+						break;
+					case 20:
+						this.fl_item[i][j] = new blue_bottle(i, j, this.floor_map[i][j]);
 						break;
 					default:
 						this.fl_item[i][j] = new Item(i, j);
