@@ -12,15 +12,15 @@ public class Mapcube extends JLabel{
         this.setBounds(Form.L*my, Form.L*mx, Form.L, Form.L);
         switch(cube_class){
             case 0:
-                this.setIcon(Form.groundIcon);
+                this.setIcon(Imagejpgs.groundIcon);
                 this.is_wall=false;
                 break;
             case 1:
-                this.setIcon(Form.wallIcon);
+                this.setIcon(Imagejpgs.wallIcon);
                 this.is_wall=true;
                 break;
             default:
-                this.setIcon(Form.groundIcon);
+                this.setIcon(Imagejpgs.groundIcon);
                 this.is_wall=false;
                 break;
         }

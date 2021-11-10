@@ -55,14 +55,14 @@ class greenslm extends Enemy{
         super.setatk(15);
         super.setdef(5);
         super.setHP(50);
-        super.setIcon(Form.greenslmIcon);
+        super.setIcon(Imagejpgs.greenslmIcon);
     }
     public greenslm(int x, int y, int cl){
         super(x,y,cl);
         super.setatk(15);
         super.setdef(5);
         super.setHP(50);
-        super.setIcon(Form.greenslmIcon);
+        super.setIcon(Imagejpgs.greenslmIcon);
     }
 }
 
@@ -72,14 +72,14 @@ class redslm extends Enemy{
         super.setatk(20);
         super.setdef(6);
         super.setHP(100);
-        super.setIcon(Form.redslmIcon);
+        super.setIcon(Imagejpgs.redslmIcon);
     }
     public redslm(int x,int y, int cl){
         super(x, y, cl);
         super.setatk(20);
         super.setdef(6);
         super.setHP(100);
-        super.setIcon(Form.redslmIcon);
+        super.setIcon(Imagejpgs.redslmIcon);
     }
 }
 
@@ -89,13 +89,13 @@ class smallbf extends Enemy{
         super.setatk(50);
         super.setdef(20);
         super.setHP(1000);
-        super.setIcon(Form.smallbfIcon);
+        super.setIcon(Imagejpgs.smallbfIcon);
     }
     public smallbf(int x, int y,int cl){
         super(x, y, cl);
         super.setatk(50);
         super.setdef(20);
         super.setHP(1000);
-        super.setIcon(Form.smallbfIcon);
+        super.setIcon(Imagejpgs.smallbfIcon);
     }
 }

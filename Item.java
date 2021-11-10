@@ -23,25 +23,37 @@ public class Item extends JLabel{
         this.setBounds(Form.L*iy,Form.L*ix,Form.L,Form.L);
         switch(ic){
             case 10:
-                this.setIcon(Form.upIcon);
+                this.setIcon(Imagejpgs.upIcon);
                 break;
             case 11:
-                this.setIcon(Form.downIcon);
+                this.setIcon(Imagejpgs.downIcon);
                 break;
             case 12:
-                this.setIcon(Form.yellowdoorIcon);
+                this.setIcon(Imagejpgs.yellowdoorIcon);
                 break;
             case 13:
-                this.setIcon(Form.reddoorIcon);
+                this.setIcon(Imagejpgs.reddoorIcon);
                 break;
             case 14:
-                this.setIcon(Form.yellowkeyIcon);
+                this.setIcon(Imagejpgs.yellowkeyIcon);
                 break;
             case 15:
-                this.setIcon(Form.redkeyIcon);
+                this.setIcon(Imagejpgs.redkeyIcon);
                 break;
             case 16:
-                this.setIcon(Form.specialdoorIcon);
+                this.setIcon(Imagejpgs.specialdoorIcon);
+                break;
+            case 17:
+                this.setIcon(Imagejpgs.redstoneIcon);
+                break;
+            case 18:
+                this.setIcon(Imagejpgs.bluestoneIcon);
+                break;
+            case 19:
+                this.setIcon(Imagejpgs.redbottleIcon);
+                break;
+            case 20:
+                this.setIcon(Imagejpgs.bluebottleIcon);
                 break;
         }
     }
@@ -139,5 +151,61 @@ class special_door extends Item {
     }
     @Override
     public void action_in(Hero h){
+    }
+}
+
+class red_stone extends Item{
+    public red_stone(){
+        super();
+    }
+    public red_stone(int x,int y,int ic){
+        super(x, y, ic);
+    }
+    @Override
+    public void action_in(Hero h){
+        h.add_atk(2);
+        this.existence=false;
+    }
+}
+
+class blue_stone extends Item{
+    public blue_stone(){
+        super();
+    }
+    public blue_stone(int x,int y,int ic){
+        super(x, y, ic);
+    }
+    @Override
+    public void action_in(Hero h){
+        h.add_def(2);
+        this.existence=false;
+    }
+}
+
+class red_bottle extends Item{
+    public red_bottle(){
+        super();
+    }
+    public red_bottle(int x,int y,int ic){
+        super(x, y, ic);
+    }
+    @Override
+    public void action_in(Hero h){
+        h.add_HP(100);
+        this.existence=false;
+    }
+}
+
+class blue_bottle extends Item{
+    public blue_bottle(){
+        super();
+    }
+    public blue_bottle(int x,int y,int ic){
+        super(x, y, ic);
+    }
+    @Override
+    public void action_in(Hero h){
+        h.add_HP(250);
+        this.existence=false;
     }
 }
