@@ -1,5 +1,6 @@
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import java.util.Scanner;
 
 public class Item extends JLabel{
     int ix;
@@ -138,6 +139,15 @@ class special_door extends Item {
         super(x,y,ic);
     }
     @Override
-    public void action_in(Hero h){
+    public void action_in(Hero h) {
+        String str=JOptionPane.showInputDialog(this,"我是不是最帅的人 1=是 0=否","回答问题，通过此门",JOptionPane.PLAIN_MESSAGE);
+        if(str!=null){
+            int in=Integer.parseInt(str);
+            if(in==1){
+                h.add_rk();
+                this.existence=false;
+            }
+
+        }
     }
 }
