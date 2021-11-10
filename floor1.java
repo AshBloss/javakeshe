@@ -19,4 +19,4 @@ public class floor1 extends floor{
         {1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1}};
         super.floor_num=0;
     }
-}
+}//111
