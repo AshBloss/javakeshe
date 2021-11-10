@@ -58,6 +58,9 @@ public class floor {
 					case 15:
 						this.fl_item[i][j] = new red_key(i, j, this.floor_map[i][j]);
 						break;
+					case 16:
+					    this.fl_item[i][j] = new special_door(i, j, this.floor_map[i][j]);
+						break;
 					default:
 						this.fl_item[i][j] = new Item(i, j);
 						break;

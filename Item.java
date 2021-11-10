@@ -1,4 +1,5 @@
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class Item extends JLabel{
     int ix;
@@ -38,6 +39,9 @@ public class Item extends JLabel{
                 break;
             case 15:
                 this.setIcon(Form.redkeyIcon);
+                break;
+            case 16:
+                this.setIcon(Form.specialdoorIcon);
                 break;
         }
     }
@@ -124,5 +128,16 @@ class red_key extends Item{
     public void action_in(Hero h){
         h.add_rk();
         this.existence=false;
+    }
+}
+class special_door extends Item {
+    public special_door(){
+        super();
+    }
+    public special_door(int x,int y,int ic){
+        super(x,y,ic);
+    }
+    @Override
+    public void action_in(Hero h){
     }
 }
