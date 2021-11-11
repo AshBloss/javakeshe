@@ -36,7 +36,7 @@ public class Form extends JFrame implements KeyListener{
 		mp.showmap(fl.get(0));
 		this.addKeyListener(this);
 		this.add(mp);
-		this.setSize(580,518);
+		this.setSize(580,518);/*
 		JLabel sx1 = new JLabel(Hero.update(),HPIcon,JLabel.LEFT);
 		JLabel sx2 = new JLabel(Hero.atk, atkIcon,JLabel.LEFT);
 		JLabel sx3 = new JLabel(Hero.def,defIcon,JLabel.LEFT); 
@@ -46,9 +46,11 @@ public class Form extends JFrame implements KeyListener{
 		sx1.setBounds(480,0,110,172);
 		sx2.setBounds(480,30,110,345);
 		sx3.setBounds(480,60,110,518);
+		
 		this.add(sx1);
 		this.add(sx2);
 		this.add(sx3);
+		*/
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
@@ -65,7 +67,7 @@ public class Form extends JFrame implements KeyListener{
 	public void paint(Graphics g)
 	{
 		super.paint(g);
-		g.drawImage(Form.hero, x, y, this);
+		g.drawImage(hero, x, y, this);
 	}
 	//返回主菜单
 	public void endgame(){
@@ -80,6 +82,7 @@ public class Form extends JFrame implements KeyListener{
 				yp--;
 				h.front=2;
 				hero = Imagejpgs.herouIcon.getImage();
+				this.repaint();
 				Boolean go=true;
 				Boolean changefloor = false;
 				if(!fl.get(fn).fl_map[yp][xp].is_wall){
@@ -146,6 +149,7 @@ public class Form extends JFrame implements KeyListener{
 				yp++;
 				h.front=0;
 				hero = Imagejpgs.herodIcon.getImage();
+				this.repaint();
 				Boolean go=true;
 				Boolean changefloor = false;
 				if(!fl.get(fn).fl_map[yp][xp].is_wall){
@@ -210,6 +214,7 @@ public class Form extends JFrame implements KeyListener{
 				xp--;
 				h.front=1;
 				hero = Imagejpgs.herolIcon.getImage();
+				this.repaint();
 				Boolean go=true;
 				Boolean changefloor = false;
 				if(!fl.get(fn).fl_map[yp][xp].is_wall){
@@ -274,6 +279,7 @@ public class Form extends JFrame implements KeyListener{
 				xp++;
 				h.front=3;
 				hero = Imagejpgs.herorIcon.getImage();
+				this.repaint();
 				Boolean go=true;
 				Boolean changefloor = false;
 				if(!fl.get(fn).fl_map[yp][xp].is_wall){
@@ -343,19 +349,59 @@ public class Form extends JFrame implements KeyListener{
 				new enemybook();
 				break;
 			}
+			case KeyEvent.VK_Z:{
+				h.front++;
+			}
 			case KeyEvent.VK_1:{
 				if(h.breakwall_num>0){
 					Boolean canuse=false;
 					switch(h.front){
 						case 0:{
-							yp--;
-							if(fl.get(fn).fl_map[yp][xp].is_wall)
+							yp++;
+							if(fl.get(fn).fl_map[yp][xp].is_wall){
 								canuse=true;
+								fl.get(fn).fl_map[yp][xp].is_wall=false;
+								fl.get(fn).fl_map[yp][xp].setIcon(Imagejpgs.groundIcon);
+							}
+							yp--;
+							break;
+						}
+						case 1:{
+							xp--;
+							if(fl.get(fn).fl_map[yp][xp].is_wall){
+								canuse=true;
+								fl.get(fn).fl_map[yp][xp].is_wall=false;
+								fl.get(fn).fl_map[yp][xp].setIcon(Imagejpgs.groundIcon);
+							}
+							xp++;
+							break;
+						}
+						case 2:{
+							yp--;
+							if(fl.get(fn).fl_map[yp][xp].is_wall){
+								canuse=true;
+								fl.get(fn).fl_map[yp][xp].is_wall=false;
+								fl.get(fn).fl_map[yp][xp].setIcon(Imagejpgs.groundIcon);
+							}
 							yp++;
 							break;
 						}
+						case 3:{
+							xp++;
+							if(fl.get(fn).fl_map[yp][xp].is_wall){
+								canuse=true;
+								fl.get(fn).fl_map[yp][xp].is_wall=false;
+								fl.get(fn).fl_map[yp][xp].setIcon(Imagejpgs.groundIcon);
+							}
+							xp--;
+							break;
+						}
+					}
+					if(canuse){
+						h.breakwall_num--;
 					}
 				}
+				System.out.println(h.breakwall_num);
 			}
 		}
 	}

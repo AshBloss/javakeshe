@@ -57,6 +57,12 @@ public class floor {
 					case 20:
 						this.fl_item[i][j] = new blue_bottle(i, j, this.floor_map[i][j]);
 						break;
+					case 21:
+						this.fl_item[i][j] = new breakwall(i, j, this.floor_map[i][j]);
+						break;
+					case 22:
+						this.fl_item[i][j] = new cfly(i, j, this.floor_map[i][j]);
+						break;
 					default:
 						this.fl_item[i][j] = new Item(i, j);
 						break;
