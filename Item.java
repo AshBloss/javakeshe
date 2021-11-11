@@ -158,10 +158,10 @@ class special_door extends Item {
     }
     @Override
     public void action_in(Hero h) {
-        String str=JOptionPane.showInputDialog(this,"梓萱是不是最帅的人 1=是 0=否","回答问题，通过此门",JOptionPane.PLAIN_MESSAGE);
+        String str=JOptionPane.showInputDialog(this,"一个正方形的边长增加20%后，它的面积增加百分之几?","回答问题，通过此门",JOptionPane.PLAIN_MESSAGE);
         if(str!=null){
             int in=Integer.parseInt(str);
-            if(in==1){
+            if(in==44){
                 h.add_rk();
                 this.existence=false;
             }
