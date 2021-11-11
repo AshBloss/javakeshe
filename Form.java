@@ -386,7 +386,7 @@ public class Form extends JFrame implements KeyListener{
 				break;
 			}
 			case KeyEvent.VK_X:{
-				new enemybook();
+				new enemybook(h);
 				break;
 			}
 			case KeyEvent.VK_1:{
