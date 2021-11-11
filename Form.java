@@ -110,7 +110,7 @@ public class Form extends JFrame implements KeyListener{
 					if(fl.get(fn).fl_item[yp][xp].existence){
 						fl.get(fn).fl_item[yp][xp].action_in(h);
 						fl.get(fn).fl_item[yp][xp].update();
-						if((fl.get(fn).fl_item[yp][xp].item_class==12||fl.get(fn).fl_item[yp][xp].item_class==13||fl.get(fn).fl_item[yp][xp].item_class==16)&&fl.get(fn).fl_item[yp][xp].existence){
+						if((fl.get(fn).fl_item[yp][xp].item_class==12||fl.get(fn).fl_item[yp][xp].item_class==13||fl.get(fn).fl_item[yp][xp].item_class==16||fl.get(fn).fl_item[yp][xp].item_class==23)&&fl.get(fn).fl_item[yp][xp].existence){
 							go=false;
 						}
 						//上楼
@@ -177,7 +177,7 @@ public class Form extends JFrame implements KeyListener{
 					if(fl.get(fn).fl_item[yp][xp].existence){
 						fl.get(fn).fl_item[yp][xp].action_in(h);
 						fl.get(fn).fl_item[yp][xp].update();
-						if((fl.get(fn).fl_item[yp][xp].item_class==12||fl.get(fn).fl_item[yp][xp].item_class==13||fl.get(fn).fl_item[yp][xp].item_class==16)&&fl.get(fn).fl_item[yp][xp].existence){
+						if((fl.get(fn).fl_item[yp][xp].item_class==12||fl.get(fn).fl_item[yp][xp].item_class==13||fl.get(fn).fl_item[yp][xp].item_class==16||fl.get(fn).fl_item[yp][xp].item_class==23)&&fl.get(fn).fl_item[yp][xp].existence){
 							go=false;
 						}
 						if(fl.get(fn).fl_item[yp][xp].item_class==10){
@@ -242,7 +242,7 @@ public class Form extends JFrame implements KeyListener{
 					if(fl.get(fn).fl_item[yp][xp].existence){
 						fl.get(fn).fl_item[yp][xp].action_in(h);
 						fl.get(fn).fl_item[yp][xp].update();
-						if((fl.get(fn).fl_item[yp][xp].item_class==12||fl.get(fn).fl_item[yp][xp].item_class==13||fl.get(fn).fl_item[yp][xp].item_class==16)&&fl.get(fn).fl_item[yp][xp].existence){
+						if((fl.get(fn).fl_item[yp][xp].item_class==12||fl.get(fn).fl_item[yp][xp].item_class==13||fl.get(fn).fl_item[yp][xp].item_class==16||fl.get(fn).fl_item[yp][xp].item_class==23)&&fl.get(fn).fl_item[yp][xp].existence){
 							go=false;
 						}
 						if(fl.get(fn).fl_item[yp][xp].item_class==10){
@@ -307,7 +307,7 @@ public class Form extends JFrame implements KeyListener{
 					if(fl.get(fn).fl_item[yp][xp].existence){
 						fl.get(fn).fl_item[yp][xp].action_in(h);
 						fl.get(fn).fl_item[yp][xp].update();
-						if((fl.get(fn).fl_item[yp][xp].item_class==12||fl.get(fn).fl_item[yp][xp].item_class==13||fl.get(fn).fl_item[yp][xp].item_class==16)&&fl.get(fn).fl_item[yp][xp].existence){
+						if((fl.get(fn).fl_item[yp][xp].item_class==12||fl.get(fn).fl_item[yp][xp].item_class==13||fl.get(fn).fl_item[yp][xp].item_class==16||fl.get(fn).fl_item[yp][xp].item_class==23)&&fl.get(fn).fl_item[yp][xp].existence){
 							go=false;
 						}
 						if(fl.get(fn).fl_item[yp][xp].item_class==10){

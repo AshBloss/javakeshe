@@ -63,6 +63,9 @@ public class floor {
 					case 22:
 						this.fl_item[i][j] = new cfly(i, j, this.floor_map[i][j]);
 						break;
+					case 23:
+					    this.fl_item[i][j] = new special_door1(i, j, this.floor_map[i][j]);
+						break;
 					default:
 						this.fl_item[i][j] = new Item(i, j);
 						break;
