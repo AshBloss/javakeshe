@@ -9,6 +9,9 @@ public class Hero {
     //物品
     int yellowkey_num=0;
     int redkey_num=0;
+    int breakwall_num=0;
+    int cfly_num=0;
+    int front = 0;
     //构造
     public Hero(String na){
         name = new String(na);

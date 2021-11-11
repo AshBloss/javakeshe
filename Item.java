@@ -56,6 +56,12 @@ public class Item extends JLabel{
             case 20:
                 this.setIcon(Imagejpgs.bluebottleIcon);
                 break;
+            case 21:
+                this.setIcon(Imagejpgs.breakwallIcon);
+                break;
+            case 22:
+                this.setIcon(Imagejpgs.cflyIcon);
+                break;
         }
     }
     public void update(){
@@ -217,6 +223,34 @@ class blue_bottle extends Item{
     @Override
     public void action_in(Hero h){
         h.add_HP(250);
+        this.existence=false;
+    }
+}
+
+class breakwall extends Item{
+    public breakwall(){
+        super();
+    }
+    public breakwall(int x,int y,int ic){
+        super(x, y, ic);
+    }
+    @Override
+    public void action_in(Hero h){
+        h.breakwall_num++;
+        this.existence=false;
+    }
+}
+
+class cfly extends Item{
+    public cfly(){
+        super();
+    }
+    public cfly(int x,int y,int ic){
+        super(x, y, ic);
+    }
+    @Override
+    public void action_in(Hero h){
+        h.cfly_num++;
         this.existence=false;
     }
 }

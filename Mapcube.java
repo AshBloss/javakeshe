@@ -27,6 +27,5 @@ public class Mapcube extends JLabel{
     }
 
     public Mapcube(){
-
     }
 }
