@@ -17,6 +17,7 @@ public class enemybook extends Form {
     }
     public enemybook(){
         this.loadenemy();
+        this.setTitle("怪物手册");
         x=1000;
         y=1000;
         this.repaint();

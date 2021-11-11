@@ -18,6 +18,10 @@ public class Form extends JFrame implements KeyListener{
 	JLabel showbr;
 	JLabel showfy;
 	JPanel attribute;
+	JLabel helpx;
+	JLabel help1;
+	JLabel help2;
+	JLabel helpesc;
 	public static int L = 32;			//地图块大小
 	public static int Dx=7;				//窗口x差值
 	public static int Dy=29;			//窗口y差值
@@ -36,6 +40,7 @@ public class Form extends JFrame implements KeyListener{
 	//窗体与组件加载运行
 	public void run(){
 		this.loadfloor();
+		this.setTitle("魔塔");
 		mp.setLayout(null);
 		this.setLayout(null);
 		mp.setBounds(0, 0, 480, 480);
@@ -55,13 +60,13 @@ public class Form extends JFrame implements KeyListener{
 		showre = new JLabel(""+h.redkey_num, Imagejpgs.redkeyIcon, JLabel.LEFT);
 		showbr = new JLabel(""+h.breakwall_num, Imagejpgs.breakwallIcon, JLabel.LEFT);
 		showfy = new JLabel(""+h.cfly_num, Imagejpgs.cflyIcon, JLabel.LEFT);
-		showHP.setBounds(0,0,110,70);
-		showatk.setBounds(0,70,110,70);
-		showdef.setBounds(0,140,110,70);
-		showye.setBounds(0,210,60,50);
-		showre.setBounds(60, 210, 60, 50);
-		showbr.setBounds(0, 260, 60, 50);
-		showfy.setBounds(60, 260, 60, 50);
+		showHP.setBounds(5,0,110,70);
+		showatk.setBounds(5,70,110,70);
+		showdef.setBounds(5,140,110,70);
+		showye.setBounds(5,210,60,50);
+		showre.setBounds(65, 210, 60, 50);
+		showbr.setBounds(5, 260, 60, 50);
+		showfy.setBounds(65, 260, 60, 50);
 		attribute.add(showHP);
 		attribute.add(showatk);
 		attribute.add(showdef);
@@ -72,6 +77,20 @@ public class Form extends JFrame implements KeyListener{
 
 		this.add(attribute);
 		
+		helpx = new JLabel("[X] 怪物手册");
+		help1 = new JLabel("[1] 破墙镐");
+		help2 = new JLabel("[2] 中心对称飞行器");
+		helpesc = new JLabel("[ESC] 返回主菜单");
+		helpx.setBounds(490, 340, 110, 30);
+		help1.setBounds(490, 370, 110, 30);
+		help2.setBounds(490, 400, 110, 30);
+		helpesc.setBounds(490, 430, 110, 30);
+
+		this.add(help1);
+		this.add(help2);
+		this.add(helpx);
+		this.add(helpesc);
+
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);

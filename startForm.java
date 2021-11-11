@@ -14,8 +14,8 @@ public class startForm extends JFrame implements ActionListener{
     JButton button2=new JButton();
     JButton button3=new JButton();
     public static void main(String[] args)throws InterruptedException {
-        new startForm();
-        Sound player = new Sound("D:\\1\\javakeshe\\music\\A_027XGW.wav");   
+        new startForm().setTitle("魔塔");
+        Sound player = new Sound("music/A_027XGW.wav");   
         player.start(true);
         TimeUnit.SECONDS.sleep(4);
         player.continues();
