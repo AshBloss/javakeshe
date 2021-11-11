@@ -51,26 +51,32 @@ public class Hero {
     }
     //战斗
     public void battle(Enemy em){
-        int turn,sp;
-        if(em.atk<=this.def){
-            turn=0;
-            sp=0;
-            em.defeat();
-        }
-        else if(em.def>=this.atk){
-            turn=0;
-            sp=this.HP+100;
-            this.cost_HP(sp);
-            this.dead();
+        int sp = this.csp(em);
+        if(sp==-1){
+            this.death=true;
         }
         else{
-            turn = em.HP/(this.atk-em.def);
-            sp = turn*(em.atk-this.def);
             this.cost_HP(sp);
+            em.defeat();
             this.dead();
-            if(!this.death){
-                em.defeat();
-            }
         }
+
+    }
+    //计算损失
+    public int csp(Enemy em){
+        int sp;
+        int datk = this.atk - em.def;
+        int ddef = em.atk - this.def;
+        if(datk<=0){
+            sp=-1;
+        }
+        else if(ddef<=0){
+            sp=0;
+        }
+        else{
+            int turn = em.HP/datk;
+            sp = turn*ddef;
+        }
+        return sp;
     }
 }

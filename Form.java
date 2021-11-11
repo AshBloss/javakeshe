@@ -1,4 +1,4 @@
-import javax.swing.ImageIcon;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.*;
@@ -8,6 +8,7 @@ import java.awt.event.*;
 import java.util.ArrayList;
 public class Form extends JFrame implements KeyListener{
 	//加载图片资源
+<<<<<<< HEAD
 	public static ImageIcon heroIcon = new ImageIcon("jpgs/hero.png");
 	public static ImageIcon groundIcon = new ImageIcon("jpgs/ground.png");
 	public static ImageIcon wallIcon = new ImageIcon("jpgs/wall.png");
@@ -26,6 +27,9 @@ public class Form extends JFrame implements KeyListener{
 	public static ImageIcon atkIcon = new ImageIcon("jpgs/atk.png");
 	public static ImageIcon defIcon = new ImageIcon("jpgs/def.png");
 	public static Image hero = heroIcon.getImage();
+=======
+	public static Image hero = Imagejpgs.heroIcon.getImage();
+>>>>>>> 118c0cd143961a2b5bdc5ffded419eea935d7e45
 
 	public static int L = 32;			//地图块大小
 	public static int Dx=7;				//窗口x差值
@@ -99,13 +103,13 @@ public class Form extends JFrame implements KeyListener{
 					if(fl.get(fn).fl_item[yp][xp].existence){
 						fl.get(fn).fl_item[yp][xp].action_in(h);
 						fl.get(fn).fl_item[yp][xp].update();
-						if((fl.get(fn).fl_item[yp][xp].item_class==12||fl.get(fn).fl_item[yp][xp].item_class==13)&&fl.get(fn).fl_item[yp][xp].existence){
+						if((fl.get(fn).fl_item[yp][xp].item_class==12||fl.get(fn).fl_item[yp][xp].item_class==13||fl.get(fn).fl_item[yp][xp].item_class==16)&&fl.get(fn).fl_item[yp][xp].existence){
 							go=false;
 						}
 						//上楼
 						if(fl.get(fn).fl_item[yp][xp].item_class==10){
 							if((fn+1)>fl.size()){
-								JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
+								JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Imagejpgs.heroIcon);
 								this.endgame();
 							}
 							else {
@@ -137,7 +141,7 @@ public class Form extends JFrame implements KeyListener{
 						fl.get(fn).fl_enemy[yp][xp].update();
 					}
 					if(h.death){
-						JOptionPane.showMessageDialog(null, "You died!Please try again.", "Die", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
+						JOptionPane.showMessageDialog(null, "You died!Please try again.", "Die", JOptionPane.INFORMATION_MESSAGE,Imagejpgs.heroIcon);
 						this.endgame();
 					}
 				}
@@ -163,12 +167,12 @@ public class Form extends JFrame implements KeyListener{
 					if(fl.get(fn).fl_item[yp][xp].existence){
 						fl.get(fn).fl_item[yp][xp].action_in(h);;
 						fl.get(fn).fl_item[yp][xp].update();
-						if((fl.get(fn).fl_item[yp][xp].item_class==12||fl.get(fn).fl_item[yp][xp].item_class==13)&&fl.get(fn).fl_item[yp][xp].existence){
+						if((fl.get(fn).fl_item[yp][xp].item_class==12||fl.get(fn).fl_item[yp][xp].item_class==13||fl.get(fn).fl_item[yp][xp].item_class==16)&&fl.get(fn).fl_item[yp][xp].existence){
 							go=false;
 						}
 						if(fl.get(fn).fl_item[yp][xp].item_class==10){
 							if((fn+1)>fl.size()){
-								JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
+								JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Imagejpgs.heroIcon);
 								this.endgame();
 							}
 							else {
@@ -200,7 +204,7 @@ public class Form extends JFrame implements KeyListener{
 					}
 					if(h.death){
 						System.out.println("You died");
-						JOptionPane.showMessageDialog(null, "You died!Please try again.", "Die", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
+						JOptionPane.showMessageDialog(null, "You died!Please try again.", "Die", JOptionPane.INFORMATION_MESSAGE,Imagejpgs.heroIcon);
 						this.endgame();
 					}
 				}
@@ -225,12 +229,12 @@ public class Form extends JFrame implements KeyListener{
 					if(fl.get(fn).fl_item[yp][xp].existence){
 						fl.get(fn).fl_item[yp][xp].action_in(h);
 						fl.get(fn).fl_item[yp][xp].update();
-						if((fl.get(fn).fl_item[yp][xp].item_class==12||fl.get(fn).fl_item[yp][xp].item_class==13)&&fl.get(fn).fl_item[yp][xp].existence){
+						if((fl.get(fn).fl_item[yp][xp].item_class==12||fl.get(fn).fl_item[yp][xp].item_class==13||fl.get(fn).fl_item[yp][xp].item_class==16)&&fl.get(fn).fl_item[yp][xp].existence){
 							go=false;
 						}
 						if(fl.get(fn).fl_item[yp][xp].item_class==10){
 							if((fn+1)>fl.size()){
-								JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
+								JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Imagejpgs.heroIcon);
 								this.endgame();
 							}
 							else {
@@ -262,7 +266,7 @@ public class Form extends JFrame implements KeyListener{
 					}
 					if(h.death){
 						System.out.println("You died");
-						JOptionPane.showMessageDialog(null, "You died!Please try again.", "Die", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
+						JOptionPane.showMessageDialog(null, "You died!Please try again.", "Die", JOptionPane.INFORMATION_MESSAGE,Imagejpgs.heroIcon);
 						this.endgame();	
 					}
 				}
@@ -287,12 +291,12 @@ public class Form extends JFrame implements KeyListener{
 					if(fl.get(fn).fl_item[yp][xp].existence){
 						fl.get(fn).fl_item[yp][xp].action_in(h);
 						fl.get(fn).fl_item[yp][xp].update();
-						if((fl.get(fn).fl_item[yp][xp].item_class==12||fl.get(fn).fl_item[yp][xp].item_class==13)&&fl.get(fn).fl_item[yp][xp].existence){
+						if((fl.get(fn).fl_item[yp][xp].item_class==12||fl.get(fn).fl_item[yp][xp].item_class==13||fl.get(fn).fl_item[yp][xp].item_class==16)&&fl.get(fn).fl_item[yp][xp].existence){
 							go=false;
 						}
 						if(fl.get(fn).fl_item[yp][xp].item_class==10){
 							if((fn+1)>=fl.size()){
-								JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
+								JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Imagejpgs.heroIcon);
 								this.endgame();
 							}
 							else {
@@ -324,7 +328,7 @@ public class Form extends JFrame implements KeyListener{
 					}
 					if(h.death){
 						System.out.println("You died");
-						JOptionPane.showMessageDialog(null, "You died!Please try again.", "Die", JOptionPane.INFORMATION_MESSAGE,Form.heroIcon);
+						JOptionPane.showMessageDialog(null, "You died!Please try again.", "Die", JOptionPane.INFORMATION_MESSAGE,Imagejpgs.heroIcon);
 						this.endgame();
 						
 					}
