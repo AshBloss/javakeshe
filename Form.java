@@ -349,9 +349,6 @@ public class Form extends JFrame implements KeyListener{
 				new enemybook();
 				break;
 			}
-			case KeyEvent.VK_Z:{
-				h.front++;
-			}
 			case KeyEvent.VK_1:{
 				if(h.breakwall_num>0){
 					Boolean canuse=false;
@@ -402,6 +399,23 @@ public class Form extends JFrame implements KeyListener{
 					}
 				}
 				System.out.println(h.breakwall_num);
+			}
+			case KeyEvent.VK_2:{
+				if(h.cfly_num>0){
+					xp = 14 - xp;
+					yp = 14 - yp;
+					if(!fl.get(fn).fl_map[yp][xp].is_wall){
+						x = xp*L + Dx;
+						y = yp*L + Dy;
+						this.repaint();
+						h.cfly_num--;
+					}
+					else{
+						xp = 14 - xp;
+						yp = 14 - yp;
+					}
+				}
+				System.out.println("cfly:"+h.cfly_num);
 			}
 		}
 	}
