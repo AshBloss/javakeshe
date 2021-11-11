@@ -19,4 +19,5 @@ public class Imagejpgs {
 	public static ImageIcon redbottleIcon = new ImageIcon("jpgs/redbottle.png");
 	public static ImageIcon bluebottleIcon = new ImageIcon("jpgs/bluebottle.png");
     public static ImageIcon emptyIcon = new ImageIcon("jpgs/airwall.png");
+	public static ImageIcon xbgIcon = new ImageIcon("jpgs/xbg.jpg");
 }
