@@ -13,6 +13,7 @@ public class Hero {
     public Hero(String na){
         name = new String(na);
     }
+    
     //物品属性加减运算
     public void add_atk(int i){
         this.atk += i;
@@ -37,6 +38,10 @@ public class Hero {
     }
     public void cost_HP(int i){
         this.HP-=i;
+    }
+    public void update() {
+        if((this.HP)!=HP)
+        System.out.println(HP);
     }
     //判死
     public void dead(){
