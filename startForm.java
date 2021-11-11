@@ -1,6 +1,8 @@
 
 import javax.swing.*;
 import java.awt.event.*;
+import java.util.concurrent.TimeUnit;
+import javax.swing.JFrame;
 public class startForm extends JFrame implements ActionListener{
     //图片加载
     ImageIcon bgImg=new ImageIcon("jpgs/background.jpg");
@@ -11,8 +13,12 @@ public class startForm extends JFrame implements ActionListener{
     JButton button1=new JButton();
     JButton button2=new JButton();
     JButton button3=new JButton();
-    public static void main(String[] args) {
+    public static void main(String[] args)throws InterruptedException {
         new startForm();
+        Sound player = new Sound("D:\\1\\javakeshe\\music\\A_027XGW.wav");   
+        player.start(true);
+        TimeUnit.SECONDS.sleep(4);
+        player.continues();
     }
     public startForm(){
         this.setSize(480,480);
