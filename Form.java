@@ -1,13 +1,16 @@
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.*;
 
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 public class Form extends JFrame implements KeyListener{
 	//加载图片资源
-	public static Image hero = Imagejpgs.herodIcon.getImage();
+
+	public Image hero = Imagejpgs.herodIcon.getImage();
+
 
 	public static int L = 32;			//地图块大小
 	public static int Dx=7;				//窗口x差值
@@ -33,7 +36,19 @@ public class Form extends JFrame implements KeyListener{
 		mp.showmap(fl.get(0));
 		this.addKeyListener(this);
 		this.add(mp);
-		this.setSize(493,518);
+		this.setSize(580,518);
+		JLabel sx1 = new JLabel(Hero.update(),HPIcon,JLabel.LEFT);
+		JLabel sx2 = new JLabel(Hero.atk, atkIcon,JLabel.LEFT);
+		JLabel sx3 = new JLabel(Hero.def,defIcon,JLabel.LEFT); 
+		
+		
+		
+		sx1.setBounds(480,0,110,172);
+		sx2.setBounds(480,30,110,345);
+		sx3.setBounds(480,60,110,518);
+		this.add(sx1);
+		this.add(sx2);
+		this.add(sx3);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
