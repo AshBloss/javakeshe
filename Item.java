@@ -162,7 +162,6 @@ class special_door extends Item {
         if(str!=null){
             int in=Integer.parseInt(str);
             if(in==1){
-                h.add_rk();
                 this.existence=false;
             }
 

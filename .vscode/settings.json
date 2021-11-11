@@ -30,10 +30,17 @@
         "redslm",
         "setatk",
         "setdef",
+        "showatk",
+        "showbr",
+        "showdef",
+        "showfy",
         "showmap",
+        "showre",
+        "showye",
         "smallbf",
         "specialdoor",
         "startgame",
+        "updateatt",
         "yellowdoor",
         "yellowkey"
     ]
