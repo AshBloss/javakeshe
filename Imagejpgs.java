@@ -25,4 +25,7 @@ public class Imagejpgs {
 	public static ImageIcon xbgIcon = new ImageIcon("jpgs/xbg.jpg");
 	public static ImageIcon breakwallIcon = new ImageIcon("jpgs/breakwall.png");
 	public static ImageIcon cflyIcon = new ImageIcon("jpgs/cfly.png");
+	public static ImageIcon HPIcon = new ImageIcon("jpgs/HP.png");
+	public static ImageIcon atkIcon = new ImageIcon("jpgs/atk.png");
+	public static ImageIcon defIcon = new ImageIcon("jpgs/def.png");
 }
