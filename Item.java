@@ -161,12 +161,7 @@ class special_door extends Item {
         String str=JOptionPane.showInputDialog(this,"一个正方形的边长增加20%后，它的面积增加百分之几?","回答问题，通过此门",JOptionPane.PLAIN_MESSAGE);
         if(str!=null){
             int in=Integer.parseInt(str);
-<<<<<<< HEAD
             if(in==44){
-                h.add_rk();
-=======
-            if(in==1){
->>>>>>> 45519b7f80d95bf76bea907a3f47029e5699bcbb
                 this.existence=false;
             }
 
