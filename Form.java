@@ -376,7 +376,7 @@ public class Form extends JFrame implements KeyListener{
 					switch(h.front){
 						case 0:{
 							yp++;
-							if(fl.get(fn).fl_map[yp][xp].is_wall){
+							if(fl.get(fn).fl_map[yp][xp].is_wall&&yp!=14){
 								canuse=true;
 								fl.get(fn).fl_map[yp][xp].is_wall=false;
 								fl.get(fn).fl_map[yp][xp].setIcon(Imagejpgs.groundIcon);
@@ -386,7 +386,7 @@ public class Form extends JFrame implements KeyListener{
 						}
 						case 1:{
 							xp--;
-							if(fl.get(fn).fl_map[yp][xp].is_wall){
+							if(fl.get(fn).fl_map[yp][xp].is_wall&&xp!=0){
 								canuse=true;
 								fl.get(fn).fl_map[yp][xp].is_wall=false;
 								fl.get(fn).fl_map[yp][xp].setIcon(Imagejpgs.groundIcon);
@@ -396,7 +396,7 @@ public class Form extends JFrame implements KeyListener{
 						}
 						case 2:{
 							yp--;
-							if(fl.get(fn).fl_map[yp][xp].is_wall){
+							if(fl.get(fn).fl_map[yp][xp].is_wall&&yp!=0){
 								canuse=true;
 								fl.get(fn).fl_map[yp][xp].is_wall=false;
 								fl.get(fn).fl_map[yp][xp].setIcon(Imagejpgs.groundIcon);
@@ -406,7 +406,7 @@ public class Form extends JFrame implements KeyListener{
 						}
 						case 3:{
 							xp++;
-							if(fl.get(fn).fl_map[yp][xp].is_wall){
+							if(fl.get(fn).fl_map[yp][xp].is_wall&&xp!=14){
 								canuse=true;
 								fl.get(fn).fl_map[yp][xp].is_wall=false;
 								fl.get(fn).fl_map[yp][xp].setIcon(Imagejpgs.groundIcon);
