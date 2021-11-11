@@ -1,7 +1,10 @@
 import javax.swing.ImageIcon;
 
 public class Imagejpgs {
-    public static ImageIcon heroIcon = new ImageIcon("jpgs/hero.png");
+    public static ImageIcon herouIcon = new ImageIcon("jpgs/herou.png");
+	public static ImageIcon herolIcon = new ImageIcon("jpgs/herol.png");
+	public static ImageIcon herorIcon = new ImageIcon("jpgs/heror.png");
+	public static ImageIcon herodIcon = new ImageIcon("jpgs/herod.png");
 	public static ImageIcon groundIcon = new ImageIcon("jpgs/ground.png");
 	public static ImageIcon wallIcon = new ImageIcon("jpgs/wall.png");
 	public static ImageIcon upIcon = new ImageIcon("jpgs/up.png");
@@ -20,4 +23,6 @@ public class Imagejpgs {
 	public static ImageIcon bluebottleIcon = new ImageIcon("jpgs/bluebottle.png");
     public static ImageIcon emptyIcon = new ImageIcon("jpgs/airwall.png");
 	public static ImageIcon xbgIcon = new ImageIcon("jpgs/xbg.jpg");
+	public static ImageIcon breakwallIcon = new ImageIcon("jpgs/breakwall.png");
+	public static ImageIcon cflyIcon = new ImageIcon("jpgs/cfly.png");
 }

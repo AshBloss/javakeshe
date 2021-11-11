@@ -7,7 +7,7 @@ import java.awt.event.*;
 import java.util.ArrayList;
 public class Form extends JFrame implements KeyListener{
 	//加载图片资源
-	public static Image hero = Imagejpgs.heroIcon.getImage();
+	public static Image hero = Imagejpgs.herodIcon.getImage();
 
 	public static int L = 32;			//地图块大小
 	public static int Dx=7;				//窗口x差值
@@ -63,6 +63,8 @@ public class Form extends JFrame implements KeyListener{
 		switch (e.getKeyCode()){
 			case KeyEvent.VK_UP:{			//上
 				yp--;
+				h.front=2;
+				hero = Imagejpgs.herouIcon.getImage();
 				Boolean go=true;
 				Boolean changefloor = false;
 				if(!fl.get(fn).fl_map[yp][xp].is_wall){
@@ -75,7 +77,7 @@ public class Form extends JFrame implements KeyListener{
 						//上楼
 						if(fl.get(fn).fl_item[yp][xp].item_class==10){
 							if((fn+1)>fl.size()){
-								JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Imagejpgs.heroIcon);
+								JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Imagejpgs.herodIcon);
 								this.endgame();
 							}
 							else {
@@ -107,7 +109,7 @@ public class Form extends JFrame implements KeyListener{
 						fl.get(fn).fl_enemy[yp][xp].update();
 					}
 					if(h.death){
-						JOptionPane.showMessageDialog(null, "You died!Please try again.", "Die", JOptionPane.INFORMATION_MESSAGE,Imagejpgs.heroIcon);
+						JOptionPane.showMessageDialog(null, "You died!Please try again.", "Die", JOptionPane.INFORMATION_MESSAGE,Imagejpgs.herodIcon);
 						this.endgame();
 					}
 				}
@@ -127,6 +129,8 @@ public class Form extends JFrame implements KeyListener{
 
 			case KeyEvent.VK_DOWN:{			//下
 				yp++;
+				h.front=0;
+				hero = Imagejpgs.herodIcon.getImage();
 				Boolean go=true;
 				Boolean changefloor = false;
 				if(!fl.get(fn).fl_map[yp][xp].is_wall){
@@ -138,7 +142,7 @@ public class Form extends JFrame implements KeyListener{
 						}
 						if(fl.get(fn).fl_item[yp][xp].item_class==10){
 							if((fn+1)>fl.size()){
-								JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Imagejpgs.heroIcon);
+								JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Imagejpgs.herodIcon);
 								this.endgame();
 							}
 							else {
@@ -170,7 +174,7 @@ public class Form extends JFrame implements KeyListener{
 					}
 					if(h.death){
 						System.out.println("You died");
-						JOptionPane.showMessageDialog(null, "You died!Please try again.", "Die", JOptionPane.INFORMATION_MESSAGE,Imagejpgs.heroIcon);
+						JOptionPane.showMessageDialog(null, "You died!Please try again.", "Die", JOptionPane.INFORMATION_MESSAGE,Imagejpgs.herodIcon);
 						this.endgame();
 					}
 				}
@@ -189,6 +193,8 @@ public class Form extends JFrame implements KeyListener{
 			}
 			case KeyEvent.VK_LEFT:{			//左
 				xp--;
+				h.front=1;
+				hero = Imagejpgs.herolIcon.getImage();
 				Boolean go=true;
 				Boolean changefloor = false;
 				if(!fl.get(fn).fl_map[yp][xp].is_wall){
@@ -200,7 +206,7 @@ public class Form extends JFrame implements KeyListener{
 						}
 						if(fl.get(fn).fl_item[yp][xp].item_class==10){
 							if((fn+1)>fl.size()){
-								JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Imagejpgs.heroIcon);
+								JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Imagejpgs.herodIcon);
 								this.endgame();
 							}
 							else {
@@ -232,7 +238,7 @@ public class Form extends JFrame implements KeyListener{
 					}
 					if(h.death){
 						System.out.println("You died");
-						JOptionPane.showMessageDialog(null, "You died!Please try again.", "Die", JOptionPane.INFORMATION_MESSAGE,Imagejpgs.heroIcon);
+						JOptionPane.showMessageDialog(null, "You died!Please try again.", "Die", JOptionPane.INFORMATION_MESSAGE,Imagejpgs.herodIcon);
 						this.endgame();	
 					}
 				}
@@ -251,6 +257,8 @@ public class Form extends JFrame implements KeyListener{
 			}
 			case KeyEvent.VK_RIGHT:{		//右
 				xp++;
+				h.front=3;
+				hero = Imagejpgs.herorIcon.getImage();
 				Boolean go=true;
 				Boolean changefloor = false;
 				if(!fl.get(fn).fl_map[yp][xp].is_wall){
@@ -262,7 +270,7 @@ public class Form extends JFrame implements KeyListener{
 						}
 						if(fl.get(fn).fl_item[yp][xp].item_class==10){
 							if((fn+1)>=fl.size()){
-								JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Imagejpgs.heroIcon);
+								JOptionPane.showMessageDialog(null, "You win!!!!", "Win", JOptionPane.INFORMATION_MESSAGE,Imagejpgs.herodIcon);
 								this.endgame();
 							}
 							else {
@@ -294,7 +302,7 @@ public class Form extends JFrame implements KeyListener{
 					}
 					if(h.death){
 						System.out.println("You died");
-						JOptionPane.showMessageDialog(null, "You died!Please try again.", "Die", JOptionPane.INFORMATION_MESSAGE,Imagejpgs.heroIcon);
+						JOptionPane.showMessageDialog(null, "You died!Please try again.", "Die", JOptionPane.INFORMATION_MESSAGE,Imagejpgs.herodIcon);
 						this.endgame();
 						
 					}
@@ -314,9 +322,25 @@ public class Form extends JFrame implements KeyListener{
 			}
 			case KeyEvent.VK_ESCAPE:{
 				this.endgame();
+				break;
 			}
 			case KeyEvent.VK_X:{
 				new enemybook();
+				break;
+			}
+			case KeyEvent.VK_1:{
+				if(h.breakwall_num>0){
+					Boolean canuse=false;
+					switch(h.front){
+						case 0:{
+							yp--;
+							if(fl.get(fn).fl_map[yp][xp].is_wall)
+								canuse=true;
+							yp++;
+							break;
+						}
+					}
+				}
 			}
 		}
 	}
