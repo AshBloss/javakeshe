@@ -12,15 +12,10 @@ public class startForm extends JFrame implements ActionListener{
     JButton button1=new JButton();
     JButton button2=new JButton();
     JButton button3=new JButton();
-<<<<<<< HEAD
-    public static void main(String[] args){
-        new startForm();
-        Sound player = new Sound("D:\\1\\javakeshe\\music\\A_027XGW.wav");   
-=======
+
     public static void main(String[] args)throws InterruptedException {
         new startForm().setTitle("魔塔");
         Sound player = new Sound("music/A_027XGW.wav");   
->>>>>>> cec19a52e1a6ba5d99ce783da7f62d7a348de50d
         player.start(true);
     }
     public startForm(){
