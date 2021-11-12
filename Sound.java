@@ -73,12 +73,6 @@ public class Sound {
 		}
 		
 	}
-	public void continueMusic(){
-		synchronized(this){
-			 run = true;
-			 notifyAll();
-		}
-	}
 	public void start(boolean loop){
 		mainThread = new Thread(new Runnable(){
 			public void run(){
@@ -92,10 +86,3 @@ public class Sound {
 		mainThread.start();
 	} 
  }
-
-
-
-
-    
- 
-
