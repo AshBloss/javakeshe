@@ -28,4 +28,16 @@ public class Imagejpgs {
 	public static ImageIcon HPIcon = new ImageIcon("jpgs/HP.png");
 	public static ImageIcon atkIcon = new ImageIcon("jpgs/atk.png");
 	public static ImageIcon defIcon = new ImageIcon("jpgs/def.png");
+	public static ImageIcon blackslmIcon = new ImageIcon("jpgs/blackslm.png");
+	public static ImageIcon bigslmIcon = new ImageIcon("jpgs/bigslm.png");
+	public static ImageIcon bigbfIcon = new ImageIcon("jpgs/bigbf.png");
+	public static ImageIcon bigklIcon = new ImageIcon("jpgs/bigkl.png");
+	public static ImageIcon blackkingIcon = new ImageIcon("jpgs/blackking.png");
+	public static ImageIcon blackqsIcon = new ImageIcon("jpgs/blackqs.png");
+	public static ImageIcon yellowbottleIcon = new ImageIcon("jpgs/yellowbottle.png");
+	public static ImageIcon bossIcon = new ImageIcon("jpgs/Boss.png");
+	public static ImageIcon redbfIcon = new ImageIcon("jpgs/redbf.png");
+	public static ImageIcon redqsIcon = new ImageIcon("jpgs/redqs.png");
+	public static ImageIcon shourenIcon = new ImageIcon("jpgs/shouren.png");
+	public static ImageIcon smallklIcon = new ImageIcon("jpgs/smallkl.png");
 }
