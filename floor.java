@@ -62,6 +62,9 @@ public class floor {
 					case 23:
 					    this.fl_item[i][j] = new special_door1(i, j, this.floor_map[i][j]);
 						break;
+					case 24:
+						this.fl_item[i][j] = new yellow_bottle(i, j, this.floor_map[i][j]);
+						break;
 					default:
 						this.fl_item[i][j] = new Item(i, j);
 						break;
@@ -76,6 +79,36 @@ public class floor {
 						break;
 					case 102:
 						this.fl_enemy[i][j] = new smallbf(i, j, this.floor_map[i][j]);
+						break;
+					case 103:
+						this.fl_enemy[i][j] = new blackslm(i, j, this.floor_map[i][j]);
+						break;
+					case 104:
+						this.fl_enemy[i][j] = new smallkl(i, j, this.floor_map[i][j]);
+						break;
+					case 105:
+						this.fl_enemy[i][j] = new bigbf(i, j, this.floor_map[i][j]);
+						break;
+					case 106:
+						this.fl_enemy[i][j] = new shouren(i, j, this.floor_map[i][j]);
+						break;
+					case 107:
+						this.fl_enemy[i][j] = new bigkl(i, j, this.floor_map[i][j]);
+						break;
+					case 108:
+						this.fl_enemy[i][j] = new bigslm(i, j, this.floor_map[i][j]);
+						break;
+					case 109:
+						this.fl_enemy[i][j] = new redbf(i, j, this.floor_map[i][j]);
+						break;
+					case 110:
+						this.fl_enemy[i][j] = new blackqs(i, j, this.floor_map[i][j]);
+						break;
+					case 111:
+						this.fl_enemy[i][j] = new blackking(i, j, this.floor_map[i][j]);
+						break;
+					case 112:
+						this.fl_enemy[i][j] = new redqs(i, j, this.floor_map[i][j]);
 						break;
 					default:
 						this.fl_enemy[i][j] = new Enemy(i, j);

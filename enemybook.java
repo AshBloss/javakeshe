@@ -10,15 +10,25 @@ public class enemybook extends JFrame {
     public enemybook(Hero h){
 
         empa.add(new enemybookPanel(new greenslm(),h));
-        empa.get(0).setBounds(20, 20, 400, 60);
         empa.add(new enemybookPanel(new redslm(),h));
-        empa.get(1).setBounds(20, 100, 400, 60);
         empa.add(new enemybookPanel(new smallbf(),h));
-        empa.get(2).setBounds(20, 180, 400, 60);
+        empa.add(new enemybookPanel(new blackslm(),h));
+        empa.add(new enemybookPanel(new smallkl(),h));
+        empa.add(new enemybookPanel(new bigbf(),h));
+        empa.add(new enemybookPanel(new shouren(),h));
+        empa.add(new enemybookPanel(new bigkl(),h));
+        empa.add(new enemybookPanel(new bigslm(),h));
+        empa.add(new enemybookPanel(new redbf(),h));
+        empa.add(new enemybookPanel(new blackqs(),h));
+        empa.add(new enemybookPanel(new blackking(),h));
+        empa.add(new enemybookPanel(new redqs(),h));
+        for(int i=0;i<empa.size();i++){
+            empa.get(i).setBounds(20, 20+40*i, 400, 40);
+        }
 
         this.setTitle("怪物手册");
         this.setLayout(null);
-        this.setBounds(0,0,450,500);
+        this.setBounds(0,0,450,600);
         for(int i=0;i<empa.size();i++){
             this.add(empa.get(i));
         }
@@ -43,7 +53,7 @@ class enemybookPanel extends JPanel{
         this.HP = new JLabel("生命："+enemy.HP);
         this.HP.setForeground(Color.WHITE);
         this.icon = new JLabel(enemy.getIcon());
-        this.icon.setBounds(20, 10, Form.L, Form.L);
+        this.icon.setBounds(20, 0, Form.L, Form.L);
         if(h.csp(enemy)==-1){
             this.sp = new JLabel("你无法攻击");
             this.sp.setForeground(Color.RED);
@@ -56,10 +66,10 @@ class enemybookPanel extends JPanel{
             this.sp = new JLabel("损失："+h.csp(enemy));
             this.sp.setForeground(Color.WHITE);
         }
-        this.HP.setBounds(60, 10, 100, 30);
-        this.atk.setBounds(140, 10, 100, 30);
-        this.def.setBounds(220, 10, 100, 30);
-        this.sp.setBounds(300, 10, 100, 30);
+        this.HP.setBounds(60, 0, 100, 20);
+        this.atk.setBounds(140, 0, 100, 20);
+        this.def.setBounds(220, 0, 100, 20);
+        this.sp.setBounds(300, 0, 100, 20);
         this.setLayout(null);
         this.add(this.atk);
         this.add(this.def);

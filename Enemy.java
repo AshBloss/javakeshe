@@ -124,15 +124,15 @@ class smallkl extends Enemy{
     }
 }
 
-class bigdf extends Enemy{
-    public bigdf(){
+class bigbf extends Enemy{
+    public bigbf(){
         super();
         super.setatk(50);
         super.setdef(10);
         super.setHP(150);
         super.setIcon(Imagejpgs.bigbfIcon);
     }
-    public bigdf(int x, int y,int cl){
+    public bigbf(int x, int y,int cl){
         super(x, y, cl);
         super.setatk(50);
         super.setdef(10);

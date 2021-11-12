@@ -21,7 +21,7 @@ public class Form extends JFrame implements KeyListener{
 	
 	MyPanel mp=new MyPanel();
 	//主角初始位置
-	int x = L+7;
+	int x = 7*L+7;
 	int y = L+29;
 	//主角初始地图坐标
 	int xp = (x-7)/L;
