@@ -2,7 +2,7 @@ public class Hero {
     //属性
     String name;
     int atk=10;
-    int def=10;
+    int def=0;
     int HP=1000;
     //死亡
     boolean death=false;

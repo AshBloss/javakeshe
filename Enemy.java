@@ -42,15 +42,15 @@ public class Enemy extends JLabel {
 class greenslm extends Enemy{
     public greenslm(){
         super();
-        super.setatk(15);
-        super.setdef(5);
+        super.setatk(8);
+        super.setdef(0);
         super.setHP(50);
         super.setIcon(Imagejpgs.greenslmIcon);
     }
     public greenslm(int x, int y, int cl){
         super(x,y,cl);
-        super.setatk(15);
-        super.setdef(5);
+        super.setatk(8);
+        super.setdef(0);
         super.setHP(50);
         super.setIcon(Imagejpgs.greenslmIcon);
     }
@@ -59,16 +59,16 @@ class greenslm extends Enemy{
 class redslm extends Enemy{
     public redslm(){
         super();
-        super.setatk(20);
-        super.setdef(6);
-        super.setHP(100);
+        super.setatk(12);
+        super.setdef(0);
+        super.setHP(50);
         super.setIcon(Imagejpgs.redslmIcon);
     }
     public redslm(int x,int y, int cl){
         super(x, y, cl);
-        super.setatk(20);
-        super.setdef(6);
-        super.setHP(100);
+        super.setatk(12);
+        super.setdef(0);
+        super.setHP(50);
         super.setIcon(Imagejpgs.redslmIcon);
     }
 }
@@ -76,16 +76,16 @@ class redslm extends Enemy{
 class smallbf extends Enemy{
     public smallbf(){
         super();
-        super.setatk(50);
-        super.setdef(20);
-        super.setHP(1000);
+        super.setatk(30);
+        super.setdef(0);
+        super.setHP(100);
         super.setIcon(Imagejpgs.smallbfIcon);
     }
     public smallbf(int x, int y,int cl){
         super(x, y, cl);
-        super.setatk(50);
-        super.setdef(20);
-        super.setHP(1000);
+        super.setatk(30);
+        super.setdef(0);
+        super.setHP(100);
         super.setIcon(Imagejpgs.smallbfIcon);
     }
 }
@@ -93,16 +93,169 @@ class smallbf extends Enemy{
 class blackslm extends Enemy{
     public blackslm(){
         super();
-        super.setatk(50);
-        super.setdef(20);
-        super.setHP(1000);
-        super.setIcon(Imagejpgs.smallbfIcon);
+        super.setatk(40);
+        super.setdef(0);
+        super.setHP(120);
+        super.setIcon(Imagejpgs.blackslmIcon);
     }
     public blackslm(int x, int y,int cl){
         super(x, y, cl);
+        super.setatk(40);
+        super.setdef(0);
+        super.setHP(120);
+        super.setIcon(Imagejpgs.blackslmIcon);
+    }
+}
+
+class smallkl extends Enemy{
+    public smallkl(){
+        super();
+        super.setatk(53);
+        super.setdef(5);
+        super.setHP(200);
+        super.setIcon(Imagejpgs.smallklIcon);
+    }
+    public smallkl(int x, int y,int cl){
+        super(x, y, cl);
+        super.setatk(53);
+        super.setdef(5);
+        super.setHP(200);
+        super.setIcon(Imagejpgs.smallklIcon);
+    }
+}
+
+class bigdf extends Enemy{
+    public bigdf(){
+        super();
         super.setatk(50);
-        super.setdef(20);
+        super.setdef(10);
+        super.setHP(150);
+        super.setIcon(Imagejpgs.bigbfIcon);
+    }
+    public bigdf(int x, int y,int cl){
+        super(x, y, cl);
+        super.setatk(50);
+        super.setdef(10);
+        super.setHP(150);
+        super.setIcon(Imagejpgs.bigbfIcon);
+    }
+}
+
+class shouren extends Enemy{
+    public shouren(){
+        super();
+        super.setatk(60);
+        super.setdef(10);
+        super.setHP(600);
+        super.setIcon(Imagejpgs.shourenIcon);
+    }
+    public shouren(int x, int y,int cl){
+        super(x, y, cl);
+        super.setatk(60);
+        super.setdef(10);
+        super.setHP(600);
+        super.setIcon(Imagejpgs.shourenIcon);
+    }
+}
+
+class bigkl extends Enemy{
+    public bigkl(){
+        super();
+        super.setatk(70);
+        super.setdef(30);
+        super.setHP(800);
+        super.setIcon(Imagejpgs.bigklIcon);
+    }
+    public bigkl(int x, int y,int cl){
+        super(x, y, cl);
+        super.setatk(70);
+        super.setdef(30);
+        super.setHP(800);
+        super.setIcon(Imagejpgs.bigklIcon);
+    }
+}
+
+class bigslm extends Enemy{
+    public bigslm(){
+        super();
+        super.setatk(120);
+        super.setdef(10);
+        super.setHP(300);
+        super.setIcon(Imagejpgs.bigslmIcon);
+    }
+    public bigslm(int x, int y,int cl){
+        super(x, y, cl);
+        super.setatk(120);
+        super.setdef(10);
+        super.setHP(300);
+        super.setIcon(Imagejpgs.bigslmIcon);
+    }
+}
+
+class redbf extends Enemy{
+    public redbf(){
+        super();
+        super.setatk(90);
+        super.setdef(30);
+        super.setHP(400);
+        super.setIcon(Imagejpgs.redbfIcon);
+    }
+    public redbf(int x, int y,int cl){
+        super(x, y, cl);
+        super.setatk(90);
+        super.setdef(30);
+        super.setHP(400);
+        super.setIcon(Imagejpgs.redbfIcon);
+    }
+}
+
+class blackqs extends Enemy{
+    public blackqs(){
+        super();
+        super.setatk(80);
+        super.setdef(40);
+        super.setHP(600);
+        super.setIcon(Imagejpgs.blackqsIcon);
+    }
+    public blackqs(int x, int y,int cl){
+        super(x, y, cl);
+        super.setatk(80);
+        super.setdef(40);
+        super.setHP(600);
+        super.setIcon(Imagejpgs.blackqsIcon);
+    }
+}
+
+class blackking extends Enemy{
+    public blackking(){
+        super();
+        super.setatk(90);
+        super.setdef(50);
         super.setHP(1000);
-        super.setIcon(Imagejpgs.smallbfIcon);
+        super.setIcon(Imagejpgs.blackkingIcon);
+    }
+    public blackking(int x, int y,int cl){
+        super(x, y, cl);
+        super.setatk(90);
+        super.setdef(50);
+        super.setHP(1000);
+        super.setIcon(Imagejpgs.blackkingIcon);
+    }
+}
+
+class redqs extends Enemy{
+    public redqs(){
+        super();
+        super.setatk(80);
+        super.setdef(50);
+        super.setHP(1200);
+        super.setIcon(Imagejpgs.redqsIcon);
+    }
+    public redqs(int x, int y,int cl){
+        super(x, y, cl);
+        super.setatk(80);
+        super.setdef(50);
+        super.setHP(1200);
+        super.setIcon(Imagejpgs.redqsIcon);
     }
 }
