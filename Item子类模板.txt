@@ -1,0 +1,24 @@
+在Item主类switch中加入
+    case n:
+        this.setIcon(Imagejpgs.XXXIcon);
+        break;
+
+在floor类的switch(this.floor_map[i][j])中加入
+    case 12:
+		this.fl_item[i][j] = new XXX(i, j, this.floor_map[i][j]);
+		break;
+
+class XXX extends Item{
+    //无参构造
+    public XXX(){
+        super();
+    }
+    //有参构造
+    public XXX(int x,int y,int ic){
+        super(x, y, ic);
+    }
+    @Override
+    public void action_in(Hero h){
+        //重写action_in事件
+    }
+}

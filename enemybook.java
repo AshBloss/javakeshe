@@ -4,22 +4,19 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class enemybook extends Form {
+public class enemybook extends JFrame {
     public static int lo = 100;
     ArrayList<enemybookPanel> empa = new ArrayList<enemybookPanel>();
-    public void loadenemy(){
+    public enemybook(Hero h){
+
         empa.add(new enemybookPanel(new greenslm(),h));
         empa.get(0).setBounds(20, 20, 400, 60);
         empa.add(new enemybookPanel(new redslm(),h));
         empa.get(1).setBounds(20, 100, 400, 60);
         empa.add(new enemybookPanel(new smallbf(),h));
         empa.get(2).setBounds(20, 180, 400, 60);
-    }
-    public enemybook(){
-        this.loadenemy();
-        x=1000;
-        y=1000;
-        this.repaint();
+
+        this.setTitle("怪物手册");
         this.setLayout(null);
         this.setBounds(0,0,450,500);
         for(int i=0;i<empa.size();i++){

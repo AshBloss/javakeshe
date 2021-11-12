@@ -81,6 +81,10 @@ class up extends Item{
     public up(int x,int y,int ic){
         super(x,y,ic);
     }
+    @Override
+    public void action_in(Hero h){
+        
+    }
 }
 
 class down extends Item{
@@ -241,7 +245,7 @@ class blue_bottle extends Item{
     }
     @Override
     public void action_in(Hero h){
-        h.add_HP(250);
+        h.add_HP(400);
         this.existence=false;
     }
 }

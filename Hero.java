@@ -15,8 +15,7 @@ public class Hero {
     //构造
     public Hero(String na){
         name = new String(na);
-    }
-    
+    }  
     //物品属性加减运算
     public void add_atk(int i){
         this.atk += i;

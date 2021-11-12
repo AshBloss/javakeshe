@@ -3,7 +3,7 @@ import javax.swing.*;
 
 //地图
 public class MyPanel extends JLayeredPane{	
-	//显示地图1111
+	//显示地图
 	public void showmap(floor fl){
 		for(int i=0;i<15;i++){
 			for(int j=0;j<15;j++){

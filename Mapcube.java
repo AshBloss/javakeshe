@@ -5,6 +5,7 @@ public class Mapcube extends JLabel{
     int my;
     int cube_class;
     Boolean is_wall;
+    //有参构造
     public Mapcube(int mx1, int my1, int cl){
         mx=mx1;
         my=my1;
