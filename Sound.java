@@ -1,18 +1,17 @@
 import javax.sound.sampled.*;
 import java.io.*;
 public class Sound {
-	private String musicPath;
-	private volatile boolean run = true;
-	private Thread mainThread;
-	private AudioInputStream audioStream;
-	private AudioFormat audioFormat;
-	private SourceDataLine sourceDataLine;
-	
+	String musicPath;
+	volatile boolean run = true;
+	Thread mainThread;
+	AudioInputStream audioStream;
+	AudioFormat audioFormat;
+	SourceDataLine sourceDataLine;
 	public Sound(String musicPath) {
 		this.musicPath = musicPath;
 		prefetch();
 	}
-	private void prefetch(){
+	public void prefetch(){
 		try{
 	    audioStream = AudioSystem.getAudioInputStream(new File(musicPath));
 		audioFormat = audioStream.getFormat();
@@ -28,13 +27,7 @@ public class Sound {
 			ex.printStackTrace();
 		}	
 	}
-	protected void finalize() throws Throwable{
-		super.finalize();
-		sourceDataLine.drain();
-		sourceDataLine.close();
-		audioStream.close();
-	}
-	private void playMusic(boolean loop)throws InterruptedException {
+	public void playMusic(boolean loop)throws InterruptedException {
 		try{
 				if(loop){
 					while(true){
@@ -53,7 +46,7 @@ public class Sound {
 		
 		
 	}
-	private void playMusic(){
+	public void playMusic(){
 		try{
 			synchronized(this){
 				run = true;
@@ -80,13 +73,7 @@ public class Sound {
 		}
 		
 	}
-	private void stopMusic(){
-		synchronized(this){
-			run = false;
-			notifyAll();
-		}
-	}
-	private void continueMusic(){
+	public void continueMusic(){
 		synchronized(this){
 			 run = true;
 			 notifyAll();
@@ -103,22 +90,7 @@ public class Sound {
 			}
 		});
 		mainThread.start();
-	}
-	public void stop(){
-		new Thread(new Runnable(){
-			public void run(){
-				stopMusic();
-				
-			}
-		}).start();
-	}
-	public void continues(){
-		new Thread(new Runnable(){
-			public void run(){
-				continueMusic();
-			}
-		}).start();
-	}  
+	} 
  }
 
 

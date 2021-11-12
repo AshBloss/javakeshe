@@ -1,6 +1,5 @@
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import java.util.Scanner;
 
 public class Item extends JLabel{
     int ix;
