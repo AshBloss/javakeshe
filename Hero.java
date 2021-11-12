@@ -1,8 +1,8 @@
 public class Hero {
     //属性
     String name;
-    int atk=10;
-    int def=0;
+    int atk=1000;
+    int def=1000;
     int HP=1000;
     //死亡
     boolean death=false;

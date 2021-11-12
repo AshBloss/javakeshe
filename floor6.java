@@ -18,6 +18,6 @@ public class floor6 extends floor{
             {  1,  0,  0, 18,  1,  0,  0, 10,  0,  0,  1, 20, 14, 20,  1},
             {  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1}
         };
-        super.floor_num=6;
+        super.floor_num=5;
     }
 }

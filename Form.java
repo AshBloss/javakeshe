@@ -93,6 +93,14 @@ public class Form extends JFrame implements KeyListener{
 		fl.get(0).loadmap();
 		fl.add(new floor2());
 		fl.get(1).loadmap();
+		fl.add(new floor3());
+		fl.get(2).loadmap();
+		fl.add(new floor5());
+		fl.get(3).loadmap();
+		fl.add(new floor6());
+		fl.get(4).loadmap();
+		fl.add(new floor7());
+		fl.get(5).loadmap();
 	}
 	//绘制主角
 	public void paint(Graphics g)
@@ -136,7 +144,7 @@ public class Form extends JFrame implements KeyListener{
 								yp = fl.get(fn).yst;
 								xp = fl.get(fn).xst;
 								x = xp*L+Dx;
-								y = xp*L+Dy;
+								y = yp*L+Dy;
 								this.repaint();
 							}
 						}
@@ -148,7 +156,7 @@ public class Form extends JFrame implements KeyListener{
 							yp = fl.get(fn).ynx;
 							xp = fl.get(fn).xnx;
 							x = xp*L+Dx;
-							y = xp*L+Dy;
+							y = yp*L+Dy;
 							this.repaint();
 						}
 					}
@@ -202,7 +210,7 @@ public class Form extends JFrame implements KeyListener{
 								yp = fl.get(fn).yst;
 								xp = fl.get(fn).xst;
 								x = xp*L+Dx;
-								y = xp*L+Dy;
+								y = yp*L+Dy;
 								this.repaint();
 							}
 						}
@@ -213,7 +221,7 @@ public class Form extends JFrame implements KeyListener{
 							yp = fl.get(fn).ynx;
 							xp = fl.get(fn).xnx;
 							x = xp*L+Dx;
-							y = xp*L+Dy;
+							y = yp*L+Dy;
 							this.repaint();
 						}
 					}
@@ -267,7 +275,7 @@ public class Form extends JFrame implements KeyListener{
 								yp = fl.get(fn).yst;
 								xp = fl.get(fn).xst;
 								x = xp*L+Dx;
-								y = xp*L+Dy;
+								y = yp*L+Dy;
 								this.repaint();
 							}
 						}
@@ -278,7 +286,7 @@ public class Form extends JFrame implements KeyListener{
 							yp = fl.get(fn).ynx;
 							xp = fl.get(fn).xnx;
 							x = xp*L+Dx;
-							y = xp*L+Dy;
+							y = yp*L+Dy;
 							this.repaint();
 						}
 					}
@@ -332,7 +340,7 @@ public class Form extends JFrame implements KeyListener{
 								yp = fl.get(fn).yst;
 								xp = fl.get(fn).xst;
 								x = xp*L+Dx;
-								y = xp*L+Dy;
+								y = yp*L+Dy;
 								this.repaint();
 							}
 						}
@@ -343,7 +351,7 @@ public class Form extends JFrame implements KeyListener{
 							yp = fl.get(fn).ynx;
 							xp = fl.get(fn).xnx;
 							x = xp*L+Dx;
-							y = xp*L+Dy;
+							y = yp*L+Dy;
 							this.repaint();
 						}
 					}
