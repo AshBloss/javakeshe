@@ -89,3 +89,20 @@ class smallbf extends Enemy{
         super.setIcon(Imagejpgs.smallbfIcon);
     }
 }
+
+class blackslm extends Enemy{
+    public blackslm(){
+        super();
+        super.setatk(50);
+        super.setdef(20);
+        super.setHP(1000);
+        super.setIcon(Imagejpgs.smallbfIcon);
+    }
+    public blackslm(int x, int y,int cl){
+        super(x, y, cl);
+        super.setatk(50);
+        super.setdef(20);
+        super.setHP(1000);
+        super.setIcon(Imagejpgs.smallbfIcon);
+    }
+}

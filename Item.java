@@ -64,6 +64,9 @@ public class Item extends JLabel{
             case 23:
                 this.setIcon(Imagejpgs.specialdoorIcon);
                 break;
+            case 24:
+                this.setIcon(Imagejpgs.yellowbottleIcon);
+                break;
         }
     }
     public void update(){
@@ -274,6 +277,20 @@ class cfly extends Item{
     @Override
     public void action_in(Hero h){
         h.cfly_num++;
+        this.existence=false;
+    }
+}
+
+class yellow_bottle extends Item{
+    public yellow_bottle(){
+        super();
+    }
+    public yellow_bottle(int x,int y,int ic){
+        super(x, y, ic);
+    }
+    @Override
+    public void action_in(Hero h){
+        h.add_HP(1000);
         this.existence=false;
     }
 }
