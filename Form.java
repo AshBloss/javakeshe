@@ -7,24 +7,18 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 public class Form extends JFrame implements KeyListener{
-	//加载图片资源
 	public Image hero = Imagejpgs.herodIcon.getImage();
-
-	JLabel showHP;
-	JLabel showatk;
-	JLabel showdef;
-	JLabel showye;
-	JLabel showre;
-	JLabel showbr;
-	JLabel showfy;
+	//属性面板
+	JLabel showHP,showatk,showdef;
+	JLabel showye,showre,showbr,showfy;
 	JPanel attribute;
-	JLabel helpx;
-	JLabel help1;
-	JLabel help2;
-	JLabel helpesc;
+	//提示
+	JLabel helpx,help1,help2,helpesc;
+
 	public static int L = 32;			//地图块大小
 	public static int Dx=7;				//窗口x差值
 	public static int Dy=29;			//窗口y差值
+	
 	MyPanel mp=new MyPanel();
 	//主角初始位置
 	int x = L+7;
@@ -32,11 +26,9 @@ public class Form extends JFrame implements KeyListener{
 	//主角初始地图坐标
 	int xp = (x-7)/L;
 	int yp = (y-29)/L;
-
 	Hero h=new Hero("me");
 	ArrayList<floor> fl = new ArrayList<floor>();
 	int fn = 0;				//当前楼层
-
 	//窗体与组件加载运行
 	public void run(){
 		this.loadfloor();
@@ -102,7 +94,6 @@ public class Form extends JFrame implements KeyListener{
 		fl.add(new floor2());
 		fl.get(1).loadmap();
 	}
-
 	//绘制主角
 	public void paint(Graphics g)
 	{
@@ -461,14 +452,13 @@ public class Form extends JFrame implements KeyListener{
 			}
 		}
 	}
- 
 	@Override
 	public void keyTyped(KeyEvent e) {	
 	}
 	@Override
 	public void keyReleased(KeyEvent e) {	
 	}
-
+	//更新属性面板
 	public void updateatt(){
 		this.showHP.setText(""+this.h.HP);
 		this.showatk.setText(""+this.h.atk);

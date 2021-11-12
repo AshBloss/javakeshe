@@ -1,12 +1,7 @@
 import javax.swing.JLabel;
 
 public class Enemy extends JLabel {
-    int atk;
-    int def;
-    int HP;
-    int ex;
-    int ey;
-    int enemy_cl;
+    int atk,def,HP,ex,ey,enemy_cl;
     Boolean existence = true;
     //构造函数
     public Enemy(){
@@ -25,25 +20,20 @@ public class Enemy extends JLabel {
         this.enemy_cl = cl;
         this.setBounds(Form.L*ey, Form.L*ex, Form.L, Form.L);
     }
-
     public void update(){
         if(!this.existence){
             this.setIcon(null);
         }
     }
-
     public void defeat(){
         this.existence=false;
     }
-
     public void setatk(int i){
         this.atk=i;
     }
-
     public void setdef(int i){
         this.def = i;
     }
-
     public void setHP(int i){
         this.HP=i;
     }

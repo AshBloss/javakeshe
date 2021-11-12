@@ -1,18 +1,14 @@
 
-//地图第一层
 public class floor {
     int n=15;                                   //地图尺寸
     int floor_num=-1;                           //地图层数
-    int xst,yst;
-    int xnx,ynx;
+    int xst,yst;								//下楼点
+    int xnx,ynx;								//上楼点
     int floor_map[][];              			//地图代码
-
     Mapcube fl_map[][] = new Mapcube[n][n];     //底层地图
-
     Item fl_item[][] = new Item[n][n];          //物品图
-
     Enemy fl_enemy[][] = new Enemy[n][n];       //怪物图
-
+	//加载地图至三层
     public void loadmap(){
 		for(int i=0;i<15;i++){
 			for(int j=0;j<15;j++){
